@@ -81,9 +81,6 @@ var Comment = React.createClass({
 });
 
 ReactDOM.render(
-	<div>
-		<CommentBoxStatic data={data} />
-		<CommentBox url="/data/comments" />
-	</div>,
+	<CommentBoxStatic data={data} />,
 	document.getElementById('content')
 );

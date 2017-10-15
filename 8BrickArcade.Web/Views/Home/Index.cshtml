@@ -2,11 +2,15 @@
 @model BaseViewModel
 
 <h1>Client Side</h1>
-<div id="content"></div>
+<div id="boxStatic"></div>
+<div id="boxDynamic"></div>
 
 <h1>Server Side</h1>
 
+
 @section scripts {
     <script>
+        ReactDOM.render(React.createElement(CommentBoxStatic, { data: data }), document.getElementById('boxStatic'));
+        ReactDOM.render(React.createElement(CommentBox, { url: "/data/comments" }), document.getElementById('boxDynamic'));
     </script>
 }
