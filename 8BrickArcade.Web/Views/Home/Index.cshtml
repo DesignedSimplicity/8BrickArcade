@@ -6,6 +6,11 @@
 <div id="boxDynamic"></div>
 
 <h1>Server Side</h1>
+@Html.React(
+    "CommentBoxStatic", new
+    {
+        data = Model.Comments
+    });
 
 
 @section scripts {

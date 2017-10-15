@@ -79,8 +79,3 @@ var Comment = React.createClass({
 		);
 	}
 });
-
-ReactDOM.render(
-	<CommentBoxStatic data={data} />,
-	document.getElementById('content')
-);
