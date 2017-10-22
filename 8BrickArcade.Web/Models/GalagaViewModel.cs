@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace _8BrickArcade.Models
+namespace _8BrickArcade.Web.Models
 {
     public enum RenderDirections
     {
@@ -13,20 +13,16 @@ namespace _8BrickArcade.Models
     public enum GalagaCharacter
 	{
 		None = 0,
-		Player = 1,
+		Fighter = 1,
 		Galaga = 2,
 		Butterfly = 3,
 		Bumblebee = 4,
 		Bosconian = 5,
-		Mosquito = 6,
-		Scorpion = 7,
+        Dragonfly = 6,
+        Scorpion = 7,
 		Galaxian = 8,
-		Spinner = 9,
-		Treker = 10,
-
-        Enterprise = 100,
-        Satellite = 90,
-        Dragonfly = 60,
+        Satellite = 9,
+        Enterprise = 10,
 	}
 
     public enum GalageCharacterClass
@@ -41,14 +37,12 @@ namespace _8BrickArcade.Models
     {
         Goei = 3,
         Zako = 4,
-
         Midori = 5,
-        Sasori = 6,
+        Tonbo = 6,
+        Sasori = 7,
         Galaxian = 8,
-
-        Tonbo = 60,
-        Momiji = 90,
-        Enterprise = 100,
+        Momiji = 9,
+        Enterprise = 10,
     }
 
     public class GalagaViewModel
@@ -59,14 +53,14 @@ namespace _8BrickArcade.Models
 		public bool HasSelectedCharacter { get { return SelectedCharacter != GalagaCharacter.None; } }
 		public bool IsMainCharacter { get { return MainCharacters.Contains(SelectedCharacter); } }
         public bool HasCube { get { return CubeCharacters.Contains(SelectedCharacter); } }
-        public string SelectedCharacterName { get { return GalagaViewModel.GetCharacterName2(SelectedCharacter); } }
+        public string SelectedCharacterName { get { return GalagaViewModel.GetCharacterName(SelectedCharacter); } }
 
         public List<GalagaCharacter> MainCharacters
         {
             get
             {
                 var list = new List<GalagaCharacter>();
-                list.Add(GalagaCharacter.Player);
+                list.Add(GalagaCharacter.Fighter);
                 list.Add(GalagaCharacter.Galaga);
                 list.Add(GalagaCharacter.Butterfly);
                 list.Add(GalagaCharacter.Bumblebee);
@@ -79,7 +73,7 @@ namespace _8BrickArcade.Models
             get
             {
                 var list = new List<GalagaCharacter>();
-                list.Add(GalagaCharacter.Player);
+                list.Add(GalagaCharacter.Fighter);
                 list.Add(GalagaCharacter.Galaga);
                 list.Add(GalagaCharacter.Butterfly);
                 list.Add(GalagaCharacter.Bumblebee);
@@ -92,7 +86,7 @@ namespace _8BrickArcade.Models
 			get
 			{
 				var list = new List<GalagaCharacter>();
-				list.Add(GalagaCharacter.Player);
+				list.Add(GalagaCharacter.Fighter);
 				list.Add(GalagaCharacter.Galaga);
 				list.Add(GalagaCharacter.Butterfly);
 				list.Add(GalagaCharacter.Bumblebee);
@@ -111,24 +105,7 @@ namespace _8BrickArcade.Models
         {
             switch (character)
             {
-                case GalagaCharacter.Player:
-                    return "Player 1";
-                case GalagaCharacter.Galaga:
-                    return "Galaga Boss";
-                case GalagaCharacter.Butterfly:
-                    return "Red Butterfly";
-                case GalagaCharacter.Bumblebee:
-                    return "Blue Bumblebee";
-                default:
-                    return character.ToString();
-            }
-        }
-
-        public static string GetCharacterName2(GalagaCharacter character)
-        {
-            switch (character)
-            {
-                case GalagaCharacter.Player:
+                case GalagaCharacter.Fighter:
                     return "Fighter";
                 case GalagaCharacter.Galaga:
                     return "Galaga";
@@ -137,9 +114,8 @@ namespace _8BrickArcade.Models
                 case GalagaCharacter.Bumblebee:
                     return "Bumblebee";
                 default:
-                    return GetCharacterName(character);
+                    return character.ToString();
             }
-
         }
 
         public static string GetEvolutionImageUrl(GalagaCharacter character, int version = 1)
@@ -150,15 +126,15 @@ namespace _8BrickArcade.Models
                 return $"/images/galaga/evolution/{character}-{version}.png".ToLowerInvariant();
         }
 
-        public static string GetCubeImageUrl(GalagaCharacter character, RenderDirections direction, int version = 1)
+        public static string GetCubeImageUrl(GalagaCharacter character, RenderDirections direction)
         {
             switch (character)
             {
-                case GalagaCharacter.Player:
+                case GalagaCharacter.Fighter:
                 case GalagaCharacter.Galaga:
                 case GalagaCharacter.Butterfly:
                 case GalagaCharacter.Bumblebee:
-                    return $"/images/galaga/cubes/{character}/{version}/{direction}.{(version == 2 ? "png " : "jpg")}".ToLowerInvariant();
+                    return $"/images/galaga/prototype/{character}/{direction}.jpg".ToLowerInvariant();
                 default:
                     return $"/images/galaga/others/{character}.jpg".ToLowerInvariant();
             }
@@ -168,24 +144,23 @@ namespace _8BrickArcade.Models
         {
             var dir = direction.ToString();
             if (direction == RenderDirections.Left || direction == RenderDirections.Right) dir = "side";
-            return $"/images/galaga/flats/{character}/{dir}.jpg".ToLowerInvariant();
-            //return $"/images/galaga/flat/{character}-{index}.jpg".ToLowerInvariant();
+            return $"/images/galaga/flatlander/{character}-{dir}.jpg".ToLowerInvariant();
         }
 
 
         public static string GetQuadThumbUrl(GalagaCharacter character, int angle)
         {
-            return $"/images/galaga/quad/256/{character}-{angle.ToString("000")}.jpg".ToLowerInvariant();
+            return $"/images/galaga/angles/thumb/{character}-{angle.ToString("000")}.jpg".ToLowerInvariant();
         }
 
         public static string GetQuadImageUrl(GalagaCharacter character, int angle)
         {
-            return $"/images/galaga/quad/{character}-{angle.ToString("000")}.jpg".ToLowerInvariant();
+            return $"/images/galaga/angles/{character}-{angle.ToString("000")}.jpg".ToLowerInvariant();
         }
 
         public static string GetIconImageUrl(GalagaCharacter character, bool svg = true)
 		{
-			return $"/images/galaga/icons/{(svg ? "svg" : "256")}/{character}.{(svg ? "svg" : "png")}".ToLowerInvariant();
+			return $"/images/galaga/icons/{(svg ? "svg" : "blocks")}/{character}.{(svg ? "svg" : "png")}".ToLowerInvariant();
 		}
         public static string GetSpriteImageUrl(GalagaCharacter character, bool closed = false)
         {
@@ -196,12 +171,12 @@ namespace _8BrickArcade.Models
         public static string GetStateImageUrl(GalagaCharacter character, bool closed = false)
         {
             var state = (closed ? "closed" : "open");
-            return $"/images/galaga/angles/{character}-{state}.png".ToLowerInvariant();
+            return $"/images/galaga/states/{character}-{state}.png".ToLowerInvariant();
         }
 
         public static string GetAngleImageUrl(GalagaCharacter character)
         {
-            return $"/images/galaga/angles//{character}-angle.png".ToLowerInvariant();
+            return $"/images/galaga/states//{character}-angle.png".ToLowerInvariant();
         }
 
         public static string GetLegoImageUrl(GalagaCharacter character)

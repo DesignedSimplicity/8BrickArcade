@@ -1,0 +1,133 @@
+﻿@using _8BrickArcade.Web.Models;
+@model GalagaViewModel
+
+@{
+    ViewBag.Title = $"Galaga - {Model.SelectedCharacterName}";
+}
+<style>
+    #quad-viewer {
+        cursor: zoom-in;
+    }
+</style>
+
+<div>
+    <a class="galego-logo" href="/galaga"><img src="~/images/logos/galego.png" /></a>
+</div>
+<hr />
+<h1><a class="highlight" href="/galaga/characters/">&raquo;&nbsp;Characters&nbsp;&laquo;</a></h1>
+<hr />
+<div class="galaga-nav2">
+    @foreach (var c in Model.AllCharacters)
+    {
+        <a href="@GalagaViewModel.GetCharacterUrl(c)">
+            <img src="@GalagaViewModel.GetStateImageUrl(c)" />
+        </a>
+    }
+</div>
+
+<hr />
+<h2>@Model.SelectedCharacterName</h2>
+<div class="row" style="background: #000;">
+    <div class="col-sm-10 col-sm-offset-1">
+        <img class="img-responsive" src="@GalagaViewModel.GetAngleImageUrl(Model.SelectedCharacter)" />
+    </div>
+</div>
+<div class="galaga-states">
+    <div>
+        <img src="@GalagaViewModel.GetStateImageUrl(Model.SelectedCharacter, false)" />
+    </div>
+    <span>
+        <img src="@GalagaViewModel.GetSpriteImageUrl(Model.SelectedCharacter, false)" />
+    </span>
+</div>
+@if (Model.IsMainCharacter && Model.SelectedCharacter != GalagaCharacter.Fighter)
+{
+    <div class="galaga-states">
+        <div>
+            <img src="@GalagaViewModel.GetStateImageUrl(Model.SelectedCharacter, true)" />
+        </div>
+        <span>
+            <img src="@GalagaViewModel.GetSpriteImageUrl(Model.SelectedCharacter, true)" />
+        </span>
+    </div>
+}
+<hr />
+<a id="view"></a>
+<div class="galaga-quad">
+    @for (var a = 0; a < 360; a += 45)
+    {
+        var d = (360 - a) % 360;
+        <a href="#view">
+            <img class="quad-viewer" src="@GalagaViewModel.GetQuadImageUrl(Model.SelectedCharacter, d)" />
+        </a>
+    }
+    <div>
+        <img id="quad-viewer" src="@GalagaViewModel.GetQuadImageUrl(Model.SelectedCharacter, 0)" />
+    </div>
+</div>
+@if (Model.IsMainCharacter)
+{
+    <hr />
+    <h3>3D Prototypes</h3>
+    <div class="galaga-comps3">
+        <span>
+            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Top)" />
+        </span>
+        <span>
+            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Left)" />
+        </span>
+        <span>
+            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Front)" />
+        </span>
+        <span>
+            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Back)" />
+        </span>
+        <span>
+            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Right)" />
+        </span>
+        <span>
+            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Bottom)" />
+        </span>
+    </div>
+    <hr />
+    <h2>Flat Landers</h2>
+    <div class="galaga-comps3">
+        <img src="@GalagaViewModel.GetFlatImageUrl(Model.SelectedCharacter, RenderDirections.Front)" />
+        <img src="@GalagaViewModel.GetFlatImageUrl(Model.SelectedCharacter, RenderDirections.Left)" />
+        <img src="@GalagaViewModel.GetFlatImageUrl(Model.SelectedCharacter, RenderDirections.Back)" />
+    </div>
+}
+
+
+
+<br />
+<h4>Select a character:</h4>
+<div class="galaga-nav2">
+    <div>
+        @foreach (var c in Model.AllCharacters)
+        {
+            <a href="@GalagaViewModel.GetCharacterUrl(c)">
+                <img src="@GalagaViewModel.GetStateImageUrl(c)" />
+            </a>
+        }
+    </div>
+</div>
+<h4><a class="highlight" href="/galaga">&laquo; Back to Galaga</a></h4>
+
+<script src="~/Scripts/jquery-3.1.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".quad-viewer").hover(function () {
+            var url = $(this).attr("src").replace("/256/", "/");
+            $("#quad-viewer").attr("src", url);
+        });
+        $(".quad-viewer").click(function () {
+            var url = $(this).attr("src").replace("/256/", "/");
+            $("#quad-viewer").attr("src", url);
+        });
+        $("#quad-viewer").click(function () {
+            var url = $(this).attr("src");
+            window.location.href = url;
+        });
+    });
+</script>

@@ -1,0 +1,79 @@
+﻿@using _8BrickArcade.Web.Models;
+@model GalagaViewModel
+
+@{
+    ViewBag.Title = "GaLEGO is Galaga in LEGO";
+}
+
+
+<style>
+
+
+</style>
+
+<div>
+    <a class="galego-logo" href="/galaga"><img src="~/images/logos/galego.png" /></a>
+</div>
+<div>
+    <hr />
+    @{
+        /*
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="highlight"><a class="highlight" href="/galaga/philosophy/">Philosophy&nbsp;&raquo;&nbsp;&raquo;</a></h2>
+        </div>
+        <div class="col-sm-6">
+            <h2 class="highlight"><a class="highlight" href="/galaga/prototypes/">Prototypes&nbsp;&raquo;&nbsp;&raquo;</a></h2>
+        </div>
+    </div>
+    <hr />
+        */
+        var fighter = GalagaCharacter.Fighter;
+    }
+    <div class="row">
+        <div class="col-sm-12">
+            <a class="highlight" href="/galaga/evolution">
+                <h2 class="highlight">Evolution&nbsp;&raquo;&nbsp;&raquo;</h2>
+                <div class="row evolution-row">
+                    <div class="col-xs-3">
+                        <div class="evolution-cell">
+                            <img src="@GalagaViewModel.GetIconImageUrl(fighter)" />
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="evolution-cell">
+                            <img class="img-responsive" src="@GalagaViewModel.GetEvolutionImageUrl(fighter, 2)" />
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="evolution-cell">
+                            <img class="img-responsive" src="@GalagaViewModel.GetEvolutionImageUrl(fighter, 3)" />
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="evolution-cell">
+                            <img class="img-responsive" src="@GalagaViewModel.GetEvolutionImageUrl(fighter, 4)" />
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="highlight"><a class="highlight" href="/galaga/characters/">Characters&nbsp;&raquo;&nbsp;&raquo;</a></h2>
+            <div class="galaga-nav2">
+                <div>
+                    @foreach (var c in Model.AllCharacters)
+                    {
+                        <a href="@GalagaViewModel.GetCharacterUrl(c)">
+                            <img src="@GalagaViewModel.GetStateImageUrl(c)" /><br />
+                            <img src="@GalagaViewModel.GetIconImageUrl(c)" /><br />
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

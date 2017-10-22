@@ -1,0 +1,23 @@
+﻿@using _8BrickArcade.Web.Models;
+@model GalagaCharacter
+
+<div class="row galaga-cubes">
+	<div class="col-sm-4 col-xs-6">
+		<img src="@GalagaViewModel.GetCubeImageUrl(Model, RenderDirections.Top)" />
+	</div>
+	<div class="col-sm-4 col-xs-6">
+		<img src="@GalagaViewModel.GetCubeImageUrl(Model, RenderDirections.Right)" />
+	</div>
+	<div class="col-sm-4 col-xs-6">
+		<img src="@GalagaViewModel.GetCubeImageUrl(Model, RenderDirections.Back)" />
+	</div>
+	<div class="col-sm-4 col-xs-6">
+		<img src="@GalagaViewModel.GetCubeImageUrl(Model, RenderDirections.Front)" />
+	</div>
+	<div class="col-sm-4 col-xs-6">
+		<img src="@GalagaViewModel.GetCubeImageUrl(Model, RenderDirections.Left)" />
+	</div>
+	<div class="col-sm-4 col-xs-6">
+		<img src="@GalagaViewModel.GetCubeImageUrl(Model, RenderDirections.Bottom)" />
+	</div>
+</div>

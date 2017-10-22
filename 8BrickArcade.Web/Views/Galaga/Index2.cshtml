@@ -1,0 +1,46 @@
+﻿@using _8BrickArcade.Web.Models;
+@model GalagaViewModel
+
+<style>
+	.galaga-nav {
+		list-style: none;
+	}
+
+		.galaga-nav li {
+			display: inline-block;
+			width: 96px;
+			height: 96px;
+		}
+
+			.galaga-nav li a img {
+				width: 100%;
+				height: auto;
+			}
+
+	.galaga-cubes {
+		background: #000;
+	}
+
+		.galaga-cubes img {
+			width: 100%;
+			height: auto;
+		}
+</style>
+
+<h2>Galaga</h2>
+
+@Html.Partial("_Navigation", Model)
+<hr />
+<br />
+@foreach (var c in Model.MainCharacters)
+{
+	@Html.Partial("_CubeRow", c)
+	<hr />
+		<br />
+}
+@foreach (var c in Model.MainCharacters)
+{
+	@Html.Partial("_CubeGrid", c)
+	<hr />
+		<br />
+}
