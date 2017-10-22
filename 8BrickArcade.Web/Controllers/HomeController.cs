@@ -14,5 +14,11 @@ namespace _8BrickArcade.Web.Controllers
         {
             return View(new BaseViewModel());
         }
+
+        public ActionResult Page(string page)
+        {
+            if (String.IsNullOrWhiteSpace(page)) return View("Home");
+            return View(page);
+        }
     }
 }

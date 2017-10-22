@@ -1,12 +1,23 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    background: #262726 url('/images/back-d.png') top center repeat;
+    font-family: 'Russo One', sans-serif;
+    text-align: center;
+    overflow-y: scroll;
+    color: #d1d1d1;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background: #0d0d0d;
+    border: 2px #1d1d1d solid;
+}
+
+
+
+/* Override the default bootstrap behavior where horizontal description lists will truncate terms that are too long to fit in the left column  */
+.dl-horizontal dt {
+    white-space: normal;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -16,3 +27,433 @@ textarea {
     max-width: 280px;
 }
 
+
+footer {
+    text-align: center;
+}
+
+
+
+p {
+    font-family: 'Open Sans';
+    font-size: 1.3em;
+    line-height: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ******************************************** */
+
+
+
+
+.head {
+    padding: 0;
+    text-align: center;
+    background: #262726 url('/images/back-d.png') top left repeat;
+}
+
+.logo {
+    display: block;
+    height: 100px;
+    border: none;
+}
+
+    .logo > img {
+        height: 100%;
+        width: auto;
+    }
+
+.galego-logo {
+    width: 75%;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+    .galego-logo img {
+        width: 100%;
+        height: auto;
+        max-width: 512px;
+    }
+
+
+.jumbotron {
+    margin: 2px;
+    padding: 10px 15px 20px;
+    color: #eee;
+    text-align: center;
+    background: #262726 url('/images/back-l.png') top left repeat;
+    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.75);
+    text-shadow: 4px 4px 4px #000;
+}
+
+.question {
+    color: #a00;
+    font-weight: bold;
+}
+
+
+
+
+.highlight {
+    color: #a00;
+}
+
+A.highlight {
+}
+
+    A.highlight:hover {
+        color: #c00;
+    }
+
+.lowlight {
+    color: #ddd;
+}
+
+.home-tile {
+    display: block;
+    opacity: 0.9;
+    color: #eee;
+    background: #000;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 15px 20px;
+    margin: 20px 0;
+    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.25);
+}
+
+
+    .home-tile:hover {
+        opacity: 1;
+        text-decoration: none;
+    }
+
+    .home-tile:active {
+        color: #fff;
+        text-decoration: none;
+    }
+
+.home-tile-head {
+    color: #a00;
+    padding: 5px;
+    display: block;
+    font-size: 3em;
+}
+
+.home-tile-head2 {
+    color: #900;
+    padding: 5px;
+    display: block;
+    font-size: 2em;
+}
+
+.home-tile-lead {
+    color: #ddd;
+    padding: 5px;
+    display: block;
+    font-size: 1.5em;
+}
+
+.home-tile-image {
+    margin: 10%;
+    width: 80%;
+    height: auto;
+}
+
+.home-tile-images,
+.home-tile-images2 {
+    display: block;
+}
+
+    .home-tile-images img,
+    .home-tile-images2 img {
+        display: inline-block;
+        margin: 5%;
+        width: 30%;
+    }
+
+.home-tile-images2 {
+    display: none;
+}
+
+.home-tile:hover .home-tile-images2 {
+    display: block;
+}
+
+.home-tile:hover .home-tile-images {
+    display: none;
+}
+
+.home-tile-call {
+    margin: 15px;
+}
+
+
+
+
+
+
+
+
+.page-about {
+    text-align: center;
+}
+
+    .page-about p {
+        width: 75%;
+        margin: 2% auto;
+    }
+
+    .page-about img {
+        margin: 15px;
+    }
+
+.page-image-half {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.page-image-large {
+    margin: 0 auto;
+    width: 75%;
+}
+
+.page-image-full {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.page-image-logo {
+    margin: 16px 8px;
+    height: 64px;
+}
+
+
+.galaga-quad {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-quad > a > img {
+        cursor: pointer;
+        display: inline-block;
+        width: 12%;
+        height: auto;
+        margin: 1% 0.25%;
+        border: #d1d1d1 1px solid;
+    }
+
+    .galaga-quad > div {
+        overflow: hidden;
+    }
+
+        .galaga-quad > div > img {
+            margin-top: -10%;
+            width: 100%;
+            height: auto;
+        }
+
+
+
+
+
+
+.galaga-comps {
+    background: #000;
+}
+
+    .galaga-comps img {
+        width: 45%;
+        padding: 2.5%;
+        height: auto;
+    }
+
+.galaga-comps2 {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-comps2 img {
+        display: inline-block;
+        width: 22%;
+        height: auto;
+        margin: 1%;
+    }
+/*
+	.galaga-comps2 img {
+		display: inline-block;
+		width: 16%;
+		height: auto;
+		margin: 1% 0.33%;
+		border: #d1d1d1 1px solid;
+	}
+*/
+
+.galaga-comps3 {
+    background: #000;
+}
+
+    .galaga-comps3 img {
+        width: 25%;
+        height: auto;
+        margin: 20px 3%;
+    }
+
+.galaga-comps4 {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-comps4 img {
+        display: inline-block;
+        width: 12%;
+        height: auto;
+        margin: 1% 0.25%;
+        border: #d1d1d1 1px solid;
+    }
+
+.galaga-comps1 {
+    background: #000;
+}
+
+    .galaga-comps1 img {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+
+.galaga-states {
+    background: #000;
+    vertical-align: middle;
+}
+
+    .galaga-states div {
+        vertical-align: middle;
+        display: inline-block;
+        width: 48%;
+    }
+
+    .galaga-states span {
+        vertical-align: middle;
+        display: inline-block;
+        margin: 5%;
+        width: 40%;
+    }
+
+    .galaga-states img {
+        vertical-align: middle;
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+
+.galaga-nav {
+    list-style: none;
+}
+
+    .galaga-nav li {
+        display: inline-block;
+        width: 96px;
+        height: 96px;
+    }
+
+        .galaga-nav li a img {
+            width: 100%;
+            height: auto;
+        }
+
+
+.galaga-nav2 {
+    vertical-align: middle;
+    font-size: 0;
+}
+
+    .galaga-nav2 a {
+        opacity: 0.8;
+        text-decoration: none;
+        display: inline-block;
+        margin: 1%;
+        width: 10.5%;
+    }
+
+        .galaga-nav2 a:hover {
+            opacity: 1;
+        }
+
+        .galaga-nav2 a img {
+            width: 100%;
+        }
+
+.galaga-nav3 {
+    vertical-align: middle;
+    background: #000;
+    font-size: 0;
+}
+
+    .galaga-nav3 > h1 {
+        text-align: left;
+        display: inline-block;
+        vertical-align: middle;
+        width: 40%;
+    }
+
+    .galaga-nav3 > a {
+        opacity: 0.8;
+        text-decoration: none;
+        display: inline-block;
+        margin: 1%;
+        width: 5.5%;
+    }
+
+        .galaga-nav3 > a:hover {
+            opacity: 1;
+        }
+
+        .galaga-nav3 > a > img {
+            width: 100%;
+        }
+
+.galaga-cubes {
+    background: #000;
+}
+
+    .galaga-cubes img {
+        width: 100%;
+        height: auto;
+    }
+
+
+
+
+
+
+.evolution-row {
+    background: #000;
+    margin-top: 20px;
+}
+
+    .evolution-row:hover {
+        background: #222;
+    }
+
+.evolution-cell {
+    width: 100%;
+    padding: 5%;
+    text-align: center;
+}
+
+    .evolution-cell > img {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
