@@ -121,7 +121,7 @@ namespace _8BrickArcade.Web.Models
         public static string GetEvolutionImageUrl(GalagaCharacter character, int version = 1)
         {
             if (version == 1)
-                return $"/images/galaga/icons/256/{character}.png".ToLowerInvariant();
+                return $"/images/galaga/icons/blocks/{character}.png".ToLowerInvariant();
             else
                 return $"/images/galaga/evolution/{character}-{version}.png".ToLowerInvariant();
         }
