@@ -179,10 +179,16 @@
     <Content Include="images\galaga\icons\blocks\Satellite.png" />
     <Content Include="images\galaga\icons\blocks\Scorpion.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\logos\galaga.png" />
+    <Content Include="images\logos\galego.png" />
+    <Content Include="images\logos\lego-ideas.png" />
     <Content Include="images\social.jpg" />
     <Content Include="images\story\fighter.gif" />
+    <Content Include="images\story\fighter.svg" />
     <Content Include="images\story\fighter1.jpg" />
     <Content Include="images\story\fighter2.jpg" />
+    <Content Include="images\story\me.jpg" />
+    <Content Include="images\story\sprites.png" />
     <Content Include="images\story\shirt.png" />
     <Content Include="readme.txt" />
     <Content Include="Scripts\bootstrap.js" />
@@ -207,7 +213,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\BaseViewModel.cs" />
+    <Compile Include="Models\GalagaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +226,7 @@
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\Galego.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

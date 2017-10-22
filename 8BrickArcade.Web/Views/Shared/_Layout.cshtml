@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is a love story about the bits and bricks which started in the '80s and will never end." />
     <title>@ViewBag.Title | 8 Brick Arcade</title>
     @Styles.Render("~/content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="https://fonts.googleapis.com/css?family=Russo+One|Open+Sans" rel="stylesheet" />
     <link rel="manifest" href="site.webmanifest">
     <link rel="icon" sizes="128x128" href="icon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Russo+One|Open+Sans" rel="stylesheet" />
+    <meta name="description" content="@(String.IsNullOrWhiteSpace(ViewBag.Description) ? "This is a love story about the bits and bricks which started in the '80s and will never end." : ViewBag.Description)" />
     <meta property="fb:app_id" content="1761621307395962" />
     <meta property="og:site_name" content="8 Brick Arcade" />
     <meta property="og:type" content="article" />
