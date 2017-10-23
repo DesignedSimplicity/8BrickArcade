@@ -29,12 +29,5 @@
 </div>
 <br />
 <h4>Select a character:</h4>
-<div class="galaga-nav2">
-    <div>
-        @foreach (var c in Model.AllCharacters)
-        {
-            <a href="@GalagaViewModel.GetCharacterUrl(c)">
-                <img src="@GalagaViewModel.GetStateImageUrl(c)" />
-            </a>}
-    </div>
-</div>
+@Html.Partial("_Navigation")
+<h4><a class="highlight" href="/galaga">&laquo; Back to Galaga</a></h4>

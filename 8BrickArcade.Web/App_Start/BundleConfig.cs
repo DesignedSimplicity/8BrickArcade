@@ -12,8 +12,6 @@ namespace _8BrickArcade
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
@@ -21,7 +19,8 @@ namespace _8BrickArcade
                         "~/Scripts/bootstrap.js"));
 
             bundles.Add(new BabelBundle("~/bundles/react").Include(
-                        "~/Scripts/React/components.jsx"));
+                        "~/Scripts/React/components.jsx",
+                        "~/Scripts/React/galaga-nav.jsx"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/bootstrap.css",

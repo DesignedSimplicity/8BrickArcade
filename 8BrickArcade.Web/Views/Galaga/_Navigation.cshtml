@@ -1,24 +1,12 @@
 ﻿@using _8BrickArcade.Web.Models;
 @model GalagaViewModel
 
-<ul class="galaga-nav">
-	@foreach (var c in Model.AllCharacters)
-	{
-		<li>
-			<a href="@GalagaViewModel.GetCharacterUrl(c)">
-				<img src="@GalagaViewModel.GetIconImageUrl(c)" />
-			</a>
-		</li>
-	}
-</ul>
-<hr />
-<ul class="galaga-nav">
-	@foreach (var c in Model.AllCharacters)
-	{
-		<li>
-			<a href="@GalagaViewModel.GetCharacterUrl(c)">
-				<img src="@GalagaViewModel.GetLegoImageUrl(c)" />
-			</a>
-		</li>
-	}
-</ul>
+<div class="galaga-nav2">
+    <div>
+        @foreach (var c in Model.AllCharacters)
+        {
+            <a href="@GalagaViewModel.GetCharacterUrl(c)">
+                <img src="@GalagaViewModel.GetStateImageUrl(c)" />
+            </a>}
+    </div>
+</div>

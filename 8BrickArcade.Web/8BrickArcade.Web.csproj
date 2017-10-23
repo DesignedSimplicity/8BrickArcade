@@ -412,6 +412,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\React\components.jsx" />
+    <Content Include="Scripts\React\galaga-nav.jsx" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -445,8 +446,6 @@
     <Content Include="Views\Galaga\Characters.cshtml" />
     <Content Include="Views\Galaga\Evolution.cshtml" />
     <Content Include="Views\Galaga\Index.cshtml" />
-    <Content Include="Views\Galaga\_CubeGrid.cshtml" />
-    <Content Include="Views\Galaga\_CubeRow.cshtml" />
     <Content Include="Views\Galaga\_Navigation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

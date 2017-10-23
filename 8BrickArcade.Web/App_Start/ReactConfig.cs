@@ -9,7 +9,8 @@ namespace _8BrickArcade.Web
 		public static void Configure()
 		{
             ReactSiteConfiguration.Configuration
-                .AddScript("~/Scripts/React/components.jsx");
+                .AddScript("~/Scripts/React/components.jsx")
+                .AddScript("~/Scripts/React/galaga-nav.jsx");
         }
 	}
 }

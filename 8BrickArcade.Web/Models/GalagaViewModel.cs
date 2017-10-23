@@ -5,6 +5,14 @@ using System.Web;
 
 namespace _8BrickArcade.Web.Models
 {
+    public class GalagaCharacterJson
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Page { get; set; }
+        public string Image { get; set; }
+    }
+
     public enum RenderDirections
     {
         Top, Bottom, Front, Back, Left, Right
@@ -46,12 +54,12 @@ namespace _8BrickArcade.Web.Models
     }
 
     public class GalagaViewModel
-	{
-		public GalagaViewModel(GalagaCharacter? character = null) { SelectedCharacter = character.HasValue ? character.Value : GalagaCharacter.None; }
+    {
+        public GalagaViewModel(GalagaCharacter? character = null) { SelectedCharacter = character.HasValue ? character.Value : GalagaCharacter.None; }
 
-		public GalagaCharacter SelectedCharacter { get; set; }
-		public bool HasSelectedCharacter { get { return SelectedCharacter != GalagaCharacter.None; } }
-		public bool IsMainCharacter { get { return MainCharacters.Contains(SelectedCharacter); } }
+        public GalagaCharacter SelectedCharacter { get; set; }
+        public bool HasSelectedCharacter { get { return SelectedCharacter != GalagaCharacter.None; } }
+        public bool IsMainCharacter { get { return MainCharacters.Contains(SelectedCharacter); } }
         public bool HasCube { get { return CubeCharacters.Contains(SelectedCharacter); } }
         public string SelectedCharacterName { get { return GalagaViewModel.GetCharacterName(SelectedCharacter); } }
 
@@ -82,24 +90,38 @@ namespace _8BrickArcade.Web.Models
         }
 
         public List<GalagaCharacter> AllCharacters
-		{
-			get
-			{
-				var list = new List<GalagaCharacter>();
-				list.Add(GalagaCharacter.Fighter);
-				list.Add(GalagaCharacter.Galaga);
-				list.Add(GalagaCharacter.Butterfly);
-				list.Add(GalagaCharacter.Bumblebee);
-				list.Add(GalagaCharacter.Scorpion);
-				list.Add(GalagaCharacter.Bosconian);
-				list.Add(GalagaCharacter.Galaxian);
+        {
+            get
+            {
+                var list = new List<GalagaCharacter>();
+                list.Add(GalagaCharacter.Fighter);
+                list.Add(GalagaCharacter.Galaga);
+                list.Add(GalagaCharacter.Butterfly);
+                list.Add(GalagaCharacter.Bumblebee);
+                list.Add(GalagaCharacter.Scorpion);
+                list.Add(GalagaCharacter.Bosconian);
+                list.Add(GalagaCharacter.Galaxian);
                 list.Add(GalagaCharacter.Dragonfly);
-                //list.Add(GalagaCharacter.Mosquito);
-                //list.Add(GalagaCharacter.Spinner);
-                //list.Add(GalagaCharacter.Treker);
                 return list;
-			}
-		}
+            }
+        }
+
+        public List<GalagaCharacterJson> GetCharacterData()
+        {
+            var all = new List<GalagaCharacterJson>();
+            foreach (var c in AllCharacters)
+            {
+                all.Add(new GalagaCharacterJson()
+                {
+                    Id = (int)c,
+                    Page = GetCharacterUrl(c),
+                    Name = GetCharacterName(c),
+                    Image = GetLegoImageUrl(c)
+                });
+            }
+            return all;
+        }
+            
 
         public static string GetCharacterName(GalagaCharacter character)
         {

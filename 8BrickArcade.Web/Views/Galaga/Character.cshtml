@@ -16,14 +16,7 @@
 <hr />
 <h1><a class="highlight" href="/galaga/characters/">&raquo;&nbsp;Characters&nbsp;&laquo;</a></h1>
 <hr />
-<div class="galaga-nav2">
-    @foreach (var c in Model.AllCharacters)
-    {
-        <a href="@GalagaViewModel.GetCharacterUrl(c)">
-            <img src="@GalagaViewModel.GetStateImageUrl(c)" />
-        </a>
-    }
-</div>
+@Html.React("GalagaNavigation", new { data = Model.GetCharacterData() })
 
 <hr />
 <h2>@Model.SelectedCharacterName</h2>
@@ -97,37 +90,27 @@
         <img src="@GalagaViewModel.GetFlatImageUrl(Model.SelectedCharacter, RenderDirections.Back)" />
     </div>
 }
-
-
-
 <br />
 <h4>Select a character:</h4>
-<div class="galaga-nav2">
-    <div>
-        @foreach (var c in Model.AllCharacters)
-        {
-            <a href="@GalagaViewModel.GetCharacterUrl(c)">
-                <img src="@GalagaViewModel.GetStateImageUrl(c)" />
-            </a>
-        }
-    </div>
-</div>
+@Html.React("GalagaNavigation", new { data = Model.GetCharacterData() })
 <h4><a class="highlight" href="/galaga">&laquo; Back to Galaga</a></h4>
 
-<script src="~/Scripts/jquery-3.1.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $(".quad-viewer").hover(function () {
-            var url = $(this).attr("src").replace("/256/", "/");
-            $("#quad-viewer").attr("src", url);
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".quad-viewer").hover(function () {
+                var url = $(this).attr("src").replace("/256/", "/");
+                $("#quad-viewer").attr("src", url);
+            });
+            $(".quad-viewer").click(function () {
+                var url = $(this).attr("src").replace("/256/", "/");
+                $("#quad-viewer").attr("src", url);
+            });
+            $("#quad-viewer").click(function () {
+                var url = $(this).attr("src");
+                window.location.href = url;
+            });
         });
-        $(".quad-viewer").click(function () {
-            var url = $(this).attr("src").replace("/256/", "/");
-            $("#quad-viewer").attr("src", url);
-        });
-        $("#quad-viewer").click(function () {
-            var url = $(this).attr("src");
-            window.location.href = url;
-        });
-    });
-</script>
+    </script>
+}
