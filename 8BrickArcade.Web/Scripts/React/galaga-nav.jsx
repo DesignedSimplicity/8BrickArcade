@@ -1,13 +1,15 @@
 ﻿var GalagaNavigation = React.createClass({
     render: function () {
-        var characterNodes = this.props.data.map(function (character) {
+        var svg = (this.props.svg != undefined && this.props.svg);
+        var lego = (this.props.lego === undefined || this.props.lego);
+        var characterNodes = this.props.data.map(function (c) {
             return (
-                <GalagaNavigationLink character={character} key={character.Id}>
-                </GalagaNavigationLink>
+                <GalagaNavigationNode key={c.Id} data={c} svg={svg} lego={lego}>
+                </GalagaNavigationNode>
             );
         });
         return (
-            <div className="galaga-nav2">
+            <div className="galaga-nav">
                 <div>
                     {characterNodes}
                 </div>
@@ -16,11 +18,17 @@
     }
 });
 
-var GalagaNavigationLink = React.createClass({
+var GalagaNavigationNode = React.createClass({
     render: function () {
+        var name = this.props.data.Name.toLowerCase();
         return (
-            <a href={this.props.character.Page}>
-                <img src={this.props.character.Image} />
+            <a href={"/galaga/characters/" + name}>
+                {this.props.lego &&
+                    <img src={"/images/galaga/states/" + name + "-open.png"} />
+                }
+                {this.props.svg &&
+                    <img src={"/images/galaga/icons/svg/" + name + ".svg"} />
+                }
             </a>
         );
     }

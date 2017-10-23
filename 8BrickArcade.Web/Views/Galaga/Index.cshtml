@@ -23,17 +23,7 @@
     <div class="row">
         <div class="col-sm-12">
             <h2 class="highlight"><a class="highlight" href="/galaga/characters/">Characters&nbsp;&raquo;&nbsp;&raquo;</a></h2>
-            <div class="galaga-nav2">
-                <div>
-                    @foreach (var c in Model.AllCharacters)
-                    {
-                        <a href="@GalagaViewModel.GetCharacterUrl(c)">
-                            <img src="@GalagaViewModel.GetStateImageUrl(c)" /><br />
-                            <img src="@GalagaViewModel.GetIconImageUrl(c)" /><br />
-                        </a>
-                    }
-                </div>
-            </div>
+            @Html.React("GalagaNavigation", new { data = Model.GetCharacterData(), svg = true })
         </div>
     </div>
 </div>
