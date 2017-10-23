@@ -1,4 +1,5 @@
-﻿body {
+﻿/* ******************************************** */
+body {
     background: #262726 url('/images/back-d.png') top center repeat;
     font-family: 'Russo One', sans-serif;
     text-align: center;
@@ -13,27 +14,6 @@
     border: 2px #1d1d1d solid;
 }
 
-
-
-/* Override the default bootstrap behavior where horizontal description lists will truncate terms that are too long to fit in the left column  */
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-
-footer {
-    text-align: center;
-}
-
-
-
 p {
     font-family: 'Open Sans';
     font-size: 1.3em;
@@ -43,18 +23,8 @@ p {
 
 
 
-
-
-
-
-
-
-
 /* ******************************************** */
-
-
-
-
+/* GLOBAL */
 .head {
     padding: 0;
     text-align: center;
@@ -72,20 +42,6 @@ p {
         width: auto;
     }
 
-.galego-logo {
-    width: 75%;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-}
-
-    .galego-logo img {
-        width: 100%;
-        height: auto;
-        max-width: 512px;
-    }
-
-
 .jumbotron {
     margin: 2px;
     padding: 10px 15px 20px;
@@ -100,9 +56,6 @@ p {
     color: #a00;
     font-weight: bold;
 }
-
-
-
 
 .highlight {
     color: #a00;
@@ -119,6 +72,7 @@ A.highlight {
     color: #ddd;
 }
 
+/* HOME */
 .home-tile {
     display: block;
     opacity: 0.9;
@@ -130,7 +84,6 @@ A.highlight {
     margin: 20px 0;
     box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.25);
 }
-
 
     .home-tile:hover {
         opacity: 1;
@@ -197,23 +150,17 @@ A.highlight {
     margin: 15px;
 }
 
-
-
-
-
-
-
-
-.page-about {
+/* PAGES */
+.page-simple {
     text-align: center;
 }
 
-    .page-about p {
+    .page-simple p {
         width: 75%;
         margin: 2% auto;
     }
 
-    .page-about img {
+    .page-simple img {
         margin: 15px;
     }
 
@@ -237,126 +184,32 @@ A.highlight {
     height: 64px;
 }
 
-
-.galaga-quad {
-    background: #000;
-    font-size: 0px;
+.page-faq-image {
+    max-width: 512px;
+    width: 75%;
 }
 
-    .galaga-quad > a > img {
-        cursor: pointer;
-        display: inline-block;
-        width: 12%;
-        height: auto;
-        margin: 1% 0.25%;
-        border: #d1d1d1 1px solid;
-    }
-
-    .galaga-quad > div {
-        overflow: hidden;
-    }
-
-        .galaga-quad > div > img {
-            margin-top: -10%;
-            width: 100%;
-            height: auto;
-        }
 
 
 
 
-
-
-.galaga-comps {
-    background: #000;
+/* ******************************************** */
+/* GALAGA LOGO */
+.galego-logo {
+    width: 75%;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
 }
 
-    .galaga-comps img {
-        width: 45%;
-        padding: 2.5%;
-        height: auto;
-    }
-
-.galaga-comps2 {
-    background: #000;
-    font-size: 0px;
-}
-
-    .galaga-comps2 img {
-        display: inline-block;
-        width: 22%;
-        height: auto;
-        margin: 1%;
-    }
-/*
-	.galaga-comps2 img {
-		display: inline-block;
-		width: 16%;
-		height: auto;
-		margin: 1% 0.33%;
-		border: #d1d1d1 1px solid;
-	}
-*/
-
-.galaga-comps3 {
-    background: #000;
-}
-
-    .galaga-comps3 img {
-        width: 25%;
-        height: auto;
-        margin: 20px 3%;
-    }
-
-.galaga-comps4 {
-    background: #000;
-    font-size: 0px;
-}
-
-    .galaga-comps4 img {
-        display: inline-block;
-        width: 12%;
-        height: auto;
-        margin: 1% 0.25%;
-        border: #d1d1d1 1px solid;
-    }
-
-.galaga-comps1 {
-    background: #000;
-}
-
-    .galaga-comps1 img {
+    .galego-logo img {
         width: 100%;
         height: auto;
-        margin: 10px auto;
-    }
-
-.galaga-states {
-    background: #000;
-    vertical-align: middle;
-}
-
-    .galaga-states div {
-        vertical-align: middle;
-        display: inline-block;
-        width: 48%;
-    }
-
-    .galaga-states span {
-        vertical-align: middle;
-        display: inline-block;
-        margin: 5%;
-        width: 40%;
-    }
-
-    .galaga-states img {
-        vertical-align: middle;
-        width: 100%;
-        height: auto;
-        margin: auto;
+        max-width: 512px;
     }
 
 
+/* GALAGA NAV */
 .galaga-nav {
     list-style: none;
 }
@@ -423,20 +276,8 @@ A.highlight {
             width: 100%;
         }
 
-.galaga-cubes {
-    background: #000;
-}
 
-    .galaga-cubes img {
-        width: 100%;
-        height: auto;
-    }
-
-
-
-
-
-
+/* GALAGA EVOLUTION */
 .evolution-row {
     background: #000;
     margin-top: 20px;
@@ -456,4 +297,140 @@ A.highlight {
         width: 100%;
         margin: auto;
         text-align: center;
+    }
+
+/* GALAGA CHARACTERS */
+.galaga-main-char {
+    color: #ddd;
+}
+
+    .galaga-main-char:hover {
+        color: #a90000;
+        text-decoration: none;
+    }
+
+.galaga-main-char-row {
+    background: #000;
+    vertical-align: middle;
+}
+
+.galaga-main-char-img-angle {
+    padding-top: 15%;
+}
+
+/* GALAGA CUBES */
+.galaga-cubes {
+    background: #000;
+}
+
+    .galaga-cubes img {
+        width: 100%;
+        height: auto;
+    }
+
+/* GALAGA QUADS */
+.galaga-quad {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-quad > a > img {
+        cursor: pointer;
+        display: inline-block;
+        width: 12%;
+        height: auto;
+        margin: 1% 0.25%;
+        border: #d1d1d1 1px solid;
+    }
+
+    .galaga-quad > div {
+        overflow: hidden;
+    }
+
+        .galaga-quad > div > img {
+            margin-top: -10%;
+            width: 100%;
+            height: auto;
+        }
+
+/* GALAGA STATES */
+.galaga-states {
+    background: #000;
+    vertical-align: middle;
+}
+
+    .galaga-states div {
+        vertical-align: middle;
+        display: inline-block;
+        width: 48%;
+    }
+
+    .galaga-states span {
+        vertical-align: middle;
+        display: inline-block;
+        margin: 5%;
+        width: 40%;
+    }
+
+    .galaga-states img {
+        vertical-align: middle;
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+/* GALAGA COMPS */
+.galaga-comps {
+    background: #000;
+}
+
+    .galaga-comps img {
+        width: 45%;
+        padding: 2.5%;
+        height: auto;
+    }
+
+.galaga-comps1 {
+    background: #000;
+}
+
+    .galaga-comps1 img {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+
+.galaga-comps2 {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-comps2 img {
+        display: inline-block;
+        width: 22%;
+        height: auto;
+        margin: 1%;
+    }
+
+.galaga-comps3 {
+    background: #000;
+}
+
+    .galaga-comps3 img {
+        width: 25%;
+        height: auto;
+        margin: 20px 3%;
+    }
+
+.galaga-comps4 {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-comps4 img {
+        display: inline-block;
+        width: 12%;
+        height: auto;
+        margin: 1% 0.25%;
+        border: #d1d1d1 1px solid;
     }
