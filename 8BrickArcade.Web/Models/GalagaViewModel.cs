@@ -53,8 +53,8 @@ namespace _8BrickArcade.Web.Models
             }
         }
 
-        public static List<GalagaModel> Characters { get { return _characters; } }
-
+        public List<GalagaModel> Characters { get { return _characters; } }
+        public GalagaModel GetCharacter(GalagaCharacter c) { return _characters.FirstOrDefault(x => x.Character == c); }
 
 
         public List<GalagaModel> ListMainCharacters()

@@ -11,46 +11,11 @@
 </div>
 <div>
     <hr />
-    @{
-                /*
-            <div class="row">
-                <div class="col-sm-6">
-                    <h2 class="highlight"><a class="highlight" href="/galaga/philosophy/">Philosophy&nbsp;&raquo;&nbsp;&raquo;</a></h2>
-                </div>
-                <div class="col-sm-6">
-                    <h2 class="highlight"><a class="highlight" href="/galaga/prototypes/">Prototypes&nbsp;&raquo;&nbsp;&raquo;</a></h2>
-                </div>
-            </div>
-            <hr />
-                */
-    var fighter = GalagaCharacter.Fighter;
-    }
     <div class="row">
         <div class="col-sm-12">
             <a class="highlight" href="/galaga/evolution">
                 <h2 class="highlight">Evolution&nbsp;&raquo;&nbsp;&raquo;</h2>
-                <div class="row evolution-row">
-                    <div class="col-xs-3">
-                        <div class="evolution-cell">
-                            <img src="@GalagaViewModel.GetIconImageUrl(fighter)" />
-                        </div>
-                    </div>
-                    <div class="col-xs-3">
-                        <div class="evolution-cell">
-                            <img class="img-responsive" src="@GalagaViewModel.GetEvolutionImageUrl(fighter, 2)" />
-                        </div>
-                    </div>
-                    <div class="col-xs-3">
-                        <div class="evolution-cell">
-                            <img class="img-responsive" src="@GalagaViewModel.GetEvolutionImageUrl(fighter, 3)" />
-                        </div>
-                    </div>
-                    <div class="col-xs-3">
-                        <div class="evolution-cell">
-                            <img class="img-responsive" src="@GalagaViewModel.GetEvolutionImageUrl(fighter, 4)" />
-                        </div>
-                    </div>
-                </div>
+                @Html.React("GalagaEvolutionRow", new { data = Model.GetCharacter(GalagaCharacter.Fighter) })
             </a>
         </div>
     </div>

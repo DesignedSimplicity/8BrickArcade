@@ -2,8 +2,10 @@
     render: function () {
         var rows = this.props.data.map(function (c) {
             return (
-                <GalagaEvolutionRow key={c.Id} data={c}>
-                </GalagaEvolutionRow>
+                <a key={c.Id} href={"/galaga/character/#" + c.Name.toLowerCase()}>
+                    <GalagaEvolutionRow data={c}>
+                    </GalagaEvolutionRow>
+                </a>
             );
         });
         return (
@@ -16,19 +18,18 @@
 
 var GalagaEvolutionRow = React.createClass({
     render: function () {
+        var name = this.props.data.Name.toLowerCase();
         return (
-            <a href={"/galaga/character/#" + this.props.data.Name}>
-                <div className="row evolution-row">
-                    <GalagaEvolutionCell Image={"/images/galaga/icons/svg/" + this.props.data.Name + ".svg"}>
-                    </GalagaEvolutionCell>
-                    <GalagaEvolutionCell Image={"/images/galaga/evolution/" + this.props.data.Name + "-2.png"}>
-                    </GalagaEvolutionCell>
-                    <GalagaEvolutionCell Image={"/images/galaga/evolution/" + this.props.data.Name + "-3.png"}>
-                    </GalagaEvolutionCell>
-                    <GalagaEvolutionCell Image={"/images/galaga/evolution/" + this.props.data.Name + "-4.png"}>
-                    </GalagaEvolutionCell>
-                </div>
-            </a>
+            <div className="row evolution-row">
+                <GalagaEvolutionCell Image={"/images/galaga/icons/svg/" + name + ".svg"}>
+                </GalagaEvolutionCell>
+                <GalagaEvolutionCell Image={"/images/galaga/evolution/" + name + "-2.png"}>
+                </GalagaEvolutionCell>
+                <GalagaEvolutionCell Image={"/images/galaga/evolution/" + name + "-3.png"}>
+                </GalagaEvolutionCell>
+                <GalagaEvolutionCell Image={"/images/galaga/evolution/" + name + "-4.png"}>
+                </GalagaEvolutionCell>
+            </div>
         );
     }
 });
