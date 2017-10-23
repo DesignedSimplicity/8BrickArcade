@@ -414,6 +414,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\React\components.jsx" />
     <Content Include="Scripts\React\galaga-evo.jsx" />
+    <Content Include="Scripts\React\galaga-360.jsx" />
     <Content Include="Scripts\React\galaga-nav.jsx" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -449,7 +450,6 @@
     <Content Include="Views\Galaga\Characters.cshtml" />
     <Content Include="Views\Galaga\Evolution.cshtml" />
     <Content Include="Views\Galaga\Index.cshtml" />
-    <Content Include="Views\Galaga\_Navigation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -20,6 +20,19 @@
 
 <hr />
 <h2>@Model.SelectedCharacterName</h2>
+
+
+<a id="360"></a>
+@Html.React("GalagaViewer", new { data = Model.GetCharacter(Model.SelectedCharacter) })
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
 <div class="row" style="background: #000;">
     <div class="col-sm-10 col-sm-offset-1">
         <img class="img-responsive" src="@GalagaViewModel.GetAngleImageUrl(Model.SelectedCharacter)" />
@@ -46,6 +59,8 @@
 }
 <hr />
 <a id="view"></a>
+
+
 <div class="galaga-quad">
     @for (var a = 0; a < 360; a += 45)
     {
@@ -91,14 +106,19 @@
     </div>
 }
 <br />
-<h4>Select a character:</h4>
-@Html.React("GalagaNavigation", new { data = Model.GetCharacterData() })
-<h4><a class="highlight" href="/galaga">&laquo; Back to Galaga</a></h4>
+@Html.React("GalagaNavigation", new { data = Model.GetCharacterData(), footer = true })
 
 @section scripts
 {
     <script>
         $(document).ready(function () {
+            $(".galaga-angle").click(function () {
+                var url = $(this).attr("src").replace("/thumb/", "/");
+                $("#galaga-angle").attr("src", url);
+            });
+
+
+
             $(".quad-viewer").hover(function () {
                 var url = $(this).attr("src").replace("/256/", "/");
                 $("#quad-viewer").attr("src", url);

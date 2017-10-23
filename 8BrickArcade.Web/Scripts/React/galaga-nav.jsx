@@ -9,12 +9,20 @@
             );
         });
         return (
-            <div className="galaga-nav">
-                <div>
-                    {characterNodes}
+            <div>
+                {this.props.footer && 
+                    <h4>Select a character:</h4>
+                }
+                <div className="galaga-nav">
+                    <div>
+                        {characterNodes}
+                    </div>
                 </div>
+                {this.props.footer &&
+                    <h4><a className="highlight" href="/galaga">&laquo; Back to Galaga</a></h4>
+                }
             </div>
-        );
+        );            
     }
 });
 

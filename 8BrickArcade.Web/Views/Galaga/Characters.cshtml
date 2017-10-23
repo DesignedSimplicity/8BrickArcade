@@ -28,6 +28,5 @@
     }
 </div>
 <br />
-<h4>Select a character:</h4>
-@Html.Partial("_Navigation")
-<h4><a class="highlight" href="/galaga">&laquo; Back to Galaga</a></h4>
+
+@Html.React("GalagaNavigation", new { data = Model.GetCharacterData(), footer = true })

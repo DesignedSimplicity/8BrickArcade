@@ -58,9 +58,51 @@
             width: 100%;
         }
 
+/* GALAGA ANGLES */
+.galaga-angles {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-angles > a > img {
+        cursor: pointer;
+        display: inline-block;
+        width: 12%;
+        height: auto;
+        margin: 1% 0.25%;
+        border: #d1d1d1 1px solid;
+    }
+
+    .galaga-angles > div {
+        overflow: hidden;
+    }
+
+        .galaga-angles > div > img {
+            margin-top: -10%;
+            width: 100%;
+            height: auto;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* GALAGA NAV */
-
-
+/*
 .galaga-nav3 {
     vertical-align: middle;
     background: #000;
@@ -89,7 +131,7 @@
         .galaga-nav3 > a > img {
             width: 100%;
         }
-    */
+*/
 
 
 
