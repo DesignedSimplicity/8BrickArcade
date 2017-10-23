@@ -50,19 +50,3 @@ var GalagaViewerZoom = React.createClass({
         );
     }
 });
-
-
-/*
-<div class="galaga-quad">
-    @for (var a = 0; a < 360; a += 45)
-    {
-        var d = (360 - a) % 360;
-        <a href="#view">
-            <img class="quad-viewer" src="@GalagaViewModel.GetQuadImageUrl(Model.SelectedCharacter, d)" />
-        </a>
-    }
-    <div>
-        <img id="quad-viewer" src="@GalagaViewModel.GetQuadImageUrl(Model.SelectedCharacter, 0)" />
-    </div>
-</div>
-*/

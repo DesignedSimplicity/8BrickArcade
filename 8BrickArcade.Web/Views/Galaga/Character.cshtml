@@ -4,11 +4,6 @@
 @{
     ViewBag.Title = $"Galaga - {Model.SelectedCharacterName}";
 }
-<style>
-    #quad-viewer {
-        cursor: zoom-in;
-    }
-</style>
 
 <div>
     <a class="galego-logo" href="/galaga"><img src="~/images/logos/galego.png" /></a>
@@ -21,16 +16,6 @@
 <hr />
 <h2>@Model.SelectedCharacterName</h2>
 
-
-<a id="360"></a>
-@Html.React("GalagaViewer", new { data = Model.GetCharacter(Model.SelectedCharacter) })
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 
 
 <div class="row" style="background: #000;">
@@ -58,21 +43,10 @@
     </div>
 }
 <hr />
-<a id="view"></a>
+<a id="360"></a>
+@Html.React("GalagaViewer", new { data = Model.GetCharacter(Model.SelectedCharacter) })
 
 
-<div class="galaga-quad">
-    @for (var a = 0; a < 360; a += 45)
-    {
-        var d = (360 - a) % 360;
-        <a href="#view">
-            <img class="quad-viewer" src="@GalagaViewModel.GetQuadImageUrl(Model.SelectedCharacter, d)" />
-        </a>
-    }
-    <div>
-        <img id="quad-viewer" src="@GalagaViewModel.GetQuadImageUrl(Model.SelectedCharacter, 0)" />
-    </div>
-</div>
 @if (Model.IsMainCharacter)
 {
     <hr />
@@ -107,30 +81,3 @@
 }
 <br />
 @Html.React("GalagaNavigation", new { data = Model.GetCharacterData(), footer = true })
-
-@section scripts
-{
-    <script>
-        $(document).ready(function () {
-            $(".galaga-angle").click(function () {
-                var url = $(this).attr("src").replace("/thumb/", "/");
-                $("#galaga-angle").attr("src", url);
-            });
-
-
-
-            $(".quad-viewer").hover(function () {
-                var url = $(this).attr("src").replace("/256/", "/");
-                $("#quad-viewer").attr("src", url);
-            });
-            $(".quad-viewer").click(function () {
-                var url = $(this).attr("src").replace("/256/", "/");
-                $("#quad-viewer").attr("src", url);
-            });
-            $("#quad-viewer").click(function () {
-                var url = $(this).attr("src");
-                window.location.href = url;
-            });
-        });
-    </script>
-}
