@@ -17,30 +17,4 @@
     Iterative design has evolved these simple pixelated sprites into imaginative 4th dimensional projections.
 </div>
 
-@foreach (var c in Model.MainCharacters)
-{
-    <a href="@GalagaViewModel.GetCharacterUrl(c)">
-        <div class="row evolution-row">
-            <div class="col-xs-3">
-                <div class="evolution-cell">
-                    <img src="@GalagaViewModel.GetIconImageUrl(c)" />
-                </div>
-            </div>
-            <div class="col-xs-3">
-                <div class="evolution-cell">
-                    <img class="img-responsive" src="@GalagaViewModel.GetEvolutionImageUrl(c, 2)" />
-                </div>
-            </div>
-            <div class="col-xs-3">
-                <div class="evolution-cell">
-                    <img class="img-responsive" src="@GalagaViewModel.GetEvolutionImageUrl(c, 3)" />
-                </div>
-            </div>
-            <div class="col-xs-3">
-                <div class="evolution-cell">
-                    <img class="img-responsive" src="@GalagaViewModel.GetEvolutionImageUrl(c, 4)" />
-                </div>
-            </div>
-        </div>
-    </a>
-}
+@Html.React("GalagaEvolution", new { data = GalagaViewModel.Characters.Where(x => x.HasEvolution) })

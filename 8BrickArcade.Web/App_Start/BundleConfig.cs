@@ -24,7 +24,8 @@ namespace _8BrickArcade
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/bootstrap.css",
-                        "~/Content/_main.css"));
+                        "~/Content/_main.css",
+                        "~/Content/_galaga.css"));
         }
     }
 }

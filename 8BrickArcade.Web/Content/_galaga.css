@@ -1,0 +1,253 @@
+﻿/* ******************************************** */
+/* GALAGA LOGO */
+.galego-logo {
+    width: 75%;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+    .galego-logo img {
+        width: 100%;
+        height: auto;
+        max-width: 512px;
+    }
+
+/* GALAGA EVOLUTION */
+.evolution-row {
+    background: #000;
+    margin-top: 20px;
+}
+
+    .evolution-row:hover {
+        background: #222;
+    }
+
+.evolution-cell {
+    width: 100%;
+    padding: 5%;
+    text-align: center;
+}
+
+    .evolution-cell > img {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+/* GALAGA NAV */
+/*
+.galaga-nav {
+    list-style: none;
+}
+
+    .galaga-nav li {
+        display: inline-block;
+        width: 96px;
+        height: 96px;
+    }
+
+        .galaga-nav li a img {
+            width: 100%;
+            height: auto;
+        }
+
+
+.galaga-nav2 {
+    vertical-align: middle;
+    font-size: 0;
+}
+
+    .galaga-nav2 a {
+        opacity: 0.8;
+        text-decoration: none;
+        display: inline-block;
+        margin: 1%;
+        width: 10.5%;
+    }
+
+        .galaga-nav2 a:hover {
+            opacity: 1;
+        }
+
+        .galaga-nav2 a img {
+            width: 100%;
+        }
+
+.galaga-nav3 {
+    vertical-align: middle;
+    background: #000;
+    font-size: 0;
+}
+
+    .galaga-nav3 > h1 {
+        text-align: left;
+        display: inline-block;
+        vertical-align: middle;
+        width: 40%;
+    }
+
+    .galaga-nav3 > a {
+        opacity: 0.8;
+        text-decoration: none;
+        display: inline-block;
+        margin: 1%;
+        width: 5.5%;
+    }
+
+        .galaga-nav3 > a:hover {
+            opacity: 1;
+        }
+
+        .galaga-nav3 > a > img {
+            width: 100%;
+        }
+    */
+
+
+
+/* GALAGA CHARACTERS */
+/*
+.galaga-main-char {
+    color: #ddd;
+}
+
+    .galaga-main-char:hover {
+        color: #a90000;
+        text-decoration: none;
+    }
+
+.galaga-main-char-row {
+    background: #000;
+    vertical-align: middle;
+}
+
+.galaga-main-char-img-angle {
+    padding-top: 15%;
+}
+*/
+
+/* GALAGA CUBES */
+/*
+.galaga-cubes {
+    background: #000;
+}
+
+    .galaga-cubes img {
+        width: 100%;
+        height: auto;
+    }
+    */
+
+/* GALAGA QUADS */
+/*
+.galaga-quad {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-quad > a > img {
+        cursor: pointer;
+        display: inline-block;
+        width: 12%;
+        height: auto;
+        margin: 1% 0.25%;
+        border: #d1d1d1 1px solid;
+    }
+
+    .galaga-quad > div {
+        overflow: hidden;
+    }
+
+        .galaga-quad > div > img {
+            margin-top: -10%;
+            width: 100%;
+            height: auto;
+        }
+    */
+
+/* GALAGA STATES */
+/*
+.galaga-states {
+    background: #000;
+    vertical-align: middle;
+}
+
+    .galaga-states div {
+        vertical-align: middle;
+        display: inline-block;
+        width: 48%;
+    }
+
+    .galaga-states span {
+        vertical-align: middle;
+        display: inline-block;
+        margin: 5%;
+        width: 40%;
+    }
+
+    .galaga-states img {
+        vertical-align: middle;
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+    */
+
+/* GALAGA COMPS */
+/*
+.galaga-comps {
+    background: #000;
+}
+
+    .galaga-comps img {
+        width: 45%;
+        padding: 2.5%;
+        height: auto;
+    }
+
+.galaga-comps1 {
+    background: #000;
+}
+
+    .galaga-comps1 img {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+
+.galaga-comps2 {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-comps2 img {
+        display: inline-block;
+        width: 22%;
+        height: auto;
+        margin: 1%;
+    }
+
+.galaga-comps3 {
+    background: #000;
+}
+
+    .galaga-comps3 img {
+        width: 25%;
+        height: auto;
+        margin: 20px 3%;
+    }
+
+.galaga-comps4 {
+    background: #000;
+    font-size: 0px;
+}
+
+    .galaga-comps4 img {
+        display: inline-block;
+        width: 12%;
+        height: auto;
+        margin: 1% 0.25%;
+        border: #d1d1d1 1px solid;
+    }
+    */

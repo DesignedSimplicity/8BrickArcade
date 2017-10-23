@@ -18,20 +18,7 @@ namespace _8BrickArcade.Web.Models
         Top, Bottom, Front, Back, Left, Right
     }
 
-    public enum GalagaCharacter
-	{
-		None = 0,
-		Fighter = 1,
-		Galaga = 2,
-		Butterfly = 3,
-		Bumblebee = 4,
-		Bosconian = 5,
-        Dragonfly = 6,
-        Scorpion = 7,
-		Galaxian = 8,
-        Satellite = 9,
-        Enterprise = 10,
-	}
+    
 
     public enum GalageCharacterClass
     {
@@ -55,6 +42,32 @@ namespace _8BrickArcade.Web.Models
 
     public class GalagaViewModel
     {
+        private static List<GalagaModel> _characters;
+
+        static GalagaViewModel()
+        {
+            _characters = new List<GalagaModel>();
+            foreach (GalagaCharacter c in Enum.GetValues(typeof(GalagaCharacter)))
+            {
+                _characters.Add(new GalagaModel(c));
+            }
+        }
+
+        public static List<GalagaModel> Characters { get { return _characters; } }
+
+
+
+        public List<GalagaModel> ListMainCharacters()
+        {
+            var list = new List<GalagaModel>();
+            list.Add(new GalagaModel(GalagaCharacter.Fighter));
+            list.Add(new GalagaModel(GalagaCharacter.Galaga));
+            list.Add(new GalagaModel(GalagaCharacter.Butterfly));
+            list.Add(new GalagaModel(GalagaCharacter.Bumblebee));
+            return list;
+        }
+
+
         public GalagaViewModel(GalagaCharacter? character = null) { SelectedCharacter = character.HasValue ? character.Value : GalagaCharacter.None; }
 
         public GalagaCharacter SelectedCharacter { get; set; }
