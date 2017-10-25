@@ -7,10 +7,10 @@
 			width: 0
         };
     },
-    changeView: function (e) {
+    changeView: function (a) {
         this.setState({
-            src: e.target.src.replace("/thumb/", "/")
-        });        
+            src: this.buildUrl(a)
+        });
 	},
 	dragStart: function (e) {
 		this.setState({
@@ -43,7 +43,6 @@
     render: function () {
 		var name = this.props.data.Name.toLowerCase();
 		var url = this.buildUrl(0);
-		console.log(url);
 		if (this.state.src == "") {
 			this.state.src = url
         }
@@ -69,7 +68,7 @@
 var GalagaViewerAngle = React.createClass({
     render: function () {
 		return (
-			<a href="#360" onClick={this.props.onChange} onMouseEnter={this.props.onChange}>
+            <a href="#360" onClick={() => this.props.onChange(this.props.degrees)} onMouseEnter={() => this.props.onChange(this.props.degrees)}>
                 <img src={"/images/galaga/angles/thumb/" + this.props.name + "-" + this.props.degrees + ".jpg"} />
             </a>
         );
