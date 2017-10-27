@@ -13,19 +13,21 @@
         });
 	},
     dragStart: function (e) {
+        console.log("dragStart");
 		this.setState({
-			start: e.clientX,
+            start: e.touches[0].pageX,
             width: e.target.width,
             offset: this.state.angle
 		});     
 	},
-	dragView: function (e) {
-		var delta = e.clientX - this.state.start;
+    dragView: function (e) {
+        var delta = e.touches[0].pageX - this.state.start;
         var a = (Math.round(8 * delta / this.state.width) % 8) * -45;
         a += this.state.offset;
         if (a < 0) a += 360;
         if (a >= 360) a -= 360;
         if (a == -0 || a == 360) a = 0;
+        console.log("dragView", a);
 		this.setState({
 			angle: a
         });
@@ -40,8 +42,8 @@
 
         return (
             <div className="galaga-angles">
-				{angles}
-                <div onDragStart={this.dragStart} onDrag={this.dragView} onDragEnd={this.dragView}>
+                {angles}
+                <div onTouchStart={this.dragStart} onTouchMove={this.dragView}>
                     <GalagaViewerAngleImage name={name} angle={this.state.angle} main="true" />
                 </div>
             </div>
