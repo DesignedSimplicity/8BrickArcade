@@ -413,7 +413,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\React\components.jsx" />
-    <Content Include="Scripts\React\ga%3baga-img.jsx" />
+    <Content Include="Scripts\React\galaga-img.jsx" />
     <Content Include="Scripts\React\galaga-evo.jsx" />
     <Content Include="Scripts\React\galaga-360.jsx" />
     <Content Include="Scripts\React\galaga-nav.jsx" />
