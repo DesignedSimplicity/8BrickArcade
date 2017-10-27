@@ -61,6 +61,11 @@ namespace _8BrickArcade.Web.Models
         public string Description { get { return (_description.ContainsKey(Character) ? _description[Character] : ""); } }
 
         /// <summary>
+        /// Character is figher
+        /// </summary>
+        public bool IsFighter { get { return Character == GalagaCharacter.Fighter; } }
+
+        /// <summary>
         /// Character is main enemy type
         /// </summary>
         public bool IsEnemy { get { return _charEnemy.Contains(Character); } }

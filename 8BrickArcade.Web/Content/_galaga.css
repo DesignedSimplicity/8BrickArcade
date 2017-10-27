@@ -83,14 +83,47 @@
             height: auto;
         }
 
-#galaga-angles {
-    cursor: move;
+/* GALAGA STATES */
+.galaga-states {
+    background: #000;
 }
 
+.galaga-state {
+    background: #000;
+    vertical-align: middle;
+}
 
+    .galaga-state div {
+        vertical-align: middle;
+        display: inline-block;
+        width: 48%;
+    }
 
+    .galaga-state span {
+        vertical-align: middle;
+        display: inline-block;
+        margin: 5%;
+        width: 40%;
+    }
 
+    .galaga-state img {
+        vertical-align: middle;
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+   
 
+/* GALAGA TRI */
+.galaga-tri {
+    background: #000;
+}
+
+    .galaga-tri img {
+        width: 25%;
+        height: auto;
+        margin: 20px 3%;
+    }
 
 
 
@@ -198,33 +231,7 @@
         }
     */
 
-/* GALAGA STATES */
-/*
-.galaga-states {
-    background: #000;
-    vertical-align: middle;
-}
 
-    .galaga-states div {
-        vertical-align: middle;
-        display: inline-block;
-        width: 48%;
-    }
-
-    .galaga-states span {
-        vertical-align: middle;
-        display: inline-block;
-        margin: 5%;
-        width: 40%;
-    }
-
-    .galaga-states img {
-        vertical-align: middle;
-        width: 100%;
-        height: auto;
-        margin: auto;
-    }
-    */
 
 /* GALAGA COMPS */
 /*

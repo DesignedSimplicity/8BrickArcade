@@ -16,72 +16,22 @@
 <hr />
 <h2>@Model.SelectedCharacterName</h2>
 
+@Html.React("GalagaStates", new { data = Model.GetCharacter(Model.SelectedCharacter) })
+
+<hr />
 
 <a id="360"></a>
 @Html.React("GalagaViewer", new { data = Model.GetCharacter(Model.SelectedCharacter) })
 
 
-
-<br /><br /><br /><br />
-<!--
-<div class="row" style="background: #000;">
-    <div class="col-sm-10 col-sm-offset-1">
-        <img class="img-responsive" src="@GalagaViewModel.GetAngleImageUrl(Model.SelectedCharacter)" />
-    </div>
-</div>
-<div class="galaga-states">
-    <div>
-        <img src="@GalagaViewModel.GetStateImageUrl(Model.SelectedCharacter, false)" />
-    </div>
-    <span>
-        <img src="@GalagaViewModel.GetSpriteImageUrl(Model.SelectedCharacter, false)" />
-    </span>
-</div>
-@if (Model.IsMainCharacter && Model.SelectedCharacter != GalagaCharacter.Fighter)
-{
-    <div class="galaga-states">
-        <div>
-            <img src="@GalagaViewModel.GetStateImageUrl(Model.SelectedCharacter, true)" />
-        </div>
-        <span>
-            <img src="@GalagaViewModel.GetSpriteImageUrl(Model.SelectedCharacter, true)" />
-        </span>
-    </div>
-}
-<hr />
--->
-
-@if (false && Model.IsMainCharacter)
+@if (Model.IsMainCharacter)
 {
     <hr />
     <h3>3D Prototypes</h3>
-    <div class="galaga-comps3">
-        <span>
-            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Top)" />
-        </span>
-        <span>
-            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Left)" />
-        </span>
-        <span>
-            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Front)" />
-        </span>
-        <span>
-            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Back)" />
-        </span>
-        <span>
-            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Right)" />
-        </span>
-        <span>
-            <img src="@GalagaViewModel.GetCubeImageUrl(Model.SelectedCharacter, RenderDirections.Bottom)" />
-        </span>
-    </div>
+    @Html.React("GalagaPrototypes", new { data = Model.GetCharacter(Model.SelectedCharacter) })
     <hr />
     <h2>Flat Landers</h2>
-    <div class="galaga-comps3">
-        <img src="@GalagaViewModel.GetFlatImageUrl(Model.SelectedCharacter, RenderDirections.Front)" />
-        <img src="@GalagaViewModel.GetFlatImageUrl(Model.SelectedCharacter, RenderDirections.Left)" />
-        <img src="@GalagaViewModel.GetFlatImageUrl(Model.SelectedCharacter, RenderDirections.Back)" />
-    </div>
+    @Html.React("GalagaFlatlanders", new { data = Model.GetCharacter(Model.SelectedCharacter) })
 }
 <br />
 @Html.React("GalagaNavigation", new { data = Model.GetCharacterData(), footer = true })
