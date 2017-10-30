@@ -1,7 +1,17 @@
 ﻿var GalagaCharacterPage = React.createClass({
 	getInitialState() {
+		var selected = "";
+
+		// load currently selected from hash
+		/*
+		if (typeof (window) != 'undefined' && window.location.hash) {
+			name = window.location.hash.substring(1);
+			var c = this.getCharacter(name);
+			selected = (c == null ? "" : name);
+		}*/
+
 		return {
-			selected: ""
+			selected: selected
 		};
 	},
 	onClick: function (name) {
@@ -11,12 +21,19 @@
 	},
 	getCharacter: function (name) {
 		var char = null;
-		var rows = this.props.data.map(function (c) {
-			if (c.Name.toLowerCase() == name.toLowerCase()) {
-				char = c;
-			}
-		});
+		if (name && name.length > 1) {
+			var rows = this.props.data.map(function (c) {
+				if (c.Name.toLowerCase() == name.toLowerCase()) {
+					char = c;
+				}
+			});
+		}
 		return char;
+	},
+	componentDidMount: function() {
+		if (typeof (window) != 'undefined') {
+			window.scrollTo(0, 0);
+		}
 	},
 	render: function () {
 		if (this.state.selected == "") {
@@ -45,6 +62,19 @@
 					<hr />
 					<h2>{char.Name}</h2>
 					<GalagaStates data={char} />
+					<hr />
+					<a id="360"></a>
+					<GalagaViewer data={char} />
+					{char.HasEvolution &&
+						<div>
+							<hr />
+							<h2>3D Prototypes</h2>
+							<GalagaPrototypes data={char} />
+							<hr />
+							<h2>Flat Landers</h2>
+							<GalagaFlatlanders data={char} />
+						</div>
+					}
 					<hr />
 					<br />
 					<GalagaNavigation data={this.props.data} onClick={this.onClick} footer="true" />

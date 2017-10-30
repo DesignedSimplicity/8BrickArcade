@@ -127,27 +127,20 @@ namespace _8BrickArcade.Web.Models
             }
         }
 
-		public List<GalagaCharacterJson> GetCharacterData()
+		public List<GalagaModel> GetCharacterData()
 		{
-			var all = new List<GalagaCharacterJson>();
+			var all = new List<GalagaModel>();
 			foreach (var c in AllCharacters)
 			{
-				all.Add(new GalagaCharacterJson()
-				{
-					Id = (int)c,
-					Page = GetCharacterUrl(c),
-					Name = GetCharacterName(c),
-					Image = GetLegoImageUrl(c)
-				});
+				all.Add(new GalagaModel(c));
 			}
 			return all;
 		}
 
-		public GalagaCharacterJson GetCharacterData(GalagaCharacter c)
+		public GalagaModel GetCharacterData(GalagaCharacter c)
 		{
 			return GetCharacterData().FirstOrDefault(x => x.Id == (int)c);
 		}
-
 
 		public static string GetCharacterName(GalagaCharacter character)
         {
