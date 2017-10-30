@@ -1,4 +1,4 @@
-﻿var GalagaEvolution = React.createClass({
+﻿var GalagaEvolutionGrid = React.createClass({
     render: function () {
         var rows = this.props.data.map(function (c) {
             return (

@@ -2,17 +2,10 @@
 @model GalagaViewModel
 
 @{
-    ViewBag.Title = "GaLEGO is Galaga in LEGO";
+	ViewBag.Title = "GaLEGO is Galaga in LEGO";
+	ViewBag.Description = "";
 }
 <div>
     <a class="galego-logo" href="/galaga"><img src="~/images/logos/galego.png" /></a>
 </div>
-<hr />
-<h1>Characters</h1>
-<hr />
-<div>
-@Html.React("GalagaCharacterList", new { data = Model.Characters.Where(x => x.HasEvolution) })
-</div>
-<br />
-
-@Html.React("GalagaNavigation", new { data = Model.GetCharacterData(), footer = true })
+@Html.React("GalagaCharacterPage", new { data = Model.GetCharacterData() })

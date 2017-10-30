@@ -56,8 +56,16 @@ namespace _8BrickArcade.Web.Models
         public List<GalagaModel> Characters { get { return _characters; } }
         public GalagaModel GetCharacter(GalagaCharacter c) { return _characters.FirstOrDefault(x => x.Character == c); }
 
+		public GalagaCharacterJson GetCharacter2(GalagaCharacter c)
+		{
+			return new GalagaCharacterJson() {
+				Id = (int)c,
+				Name = c.ToString()
+			};
+		}
 
-        public List<GalagaModel> ListMainCharacters()
+
+		public List<GalagaModel> ListMainCharacters()
         {
             var list = new List<GalagaModel>();
             list.Add(new GalagaModel(GalagaCharacter.Fighter));
@@ -119,24 +127,29 @@ namespace _8BrickArcade.Web.Models
             }
         }
 
-        public List<GalagaCharacterJson> GetCharacterData()
-        {
-            var all = new List<GalagaCharacterJson>();
-            foreach (var c in AllCharacters)
-            {
-                all.Add(new GalagaCharacterJson()
-                {
-                    Id = (int)c,
-                    Page = GetCharacterUrl(c),
-                    Name = GetCharacterName(c),
-                    Image = GetLegoImageUrl(c)
-                });
-            }
-            return all;
-        }
-            
+		public List<GalagaCharacterJson> GetCharacterData()
+		{
+			var all = new List<GalagaCharacterJson>();
+			foreach (var c in AllCharacters)
+			{
+				all.Add(new GalagaCharacterJson()
+				{
+					Id = (int)c,
+					Page = GetCharacterUrl(c),
+					Name = GetCharacterName(c),
+					Image = GetLegoImageUrl(c)
+				});
+			}
+			return all;
+		}
 
-        public static string GetCharacterName(GalagaCharacter character)
+		public GalagaCharacterJson GetCharacterData(GalagaCharacter c)
+		{
+			return GetCharacterData().FirstOrDefault(x => x.Id == (int)c);
+		}
+
+
+		public static string GetCharacterName(GalagaCharacter character)
         {
             switch (character)
             {

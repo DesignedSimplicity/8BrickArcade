@@ -16,22 +16,22 @@
 <hr />
 <h2>@Model.SelectedCharacterName</h2>
 
-@Html.React("GalagaStates", new { data = Model.GetCharacter(Model.SelectedCharacter) })
+@Html.React("GalagaStates", new { data = Model.GetCharacterData(Model.SelectedCharacter) })
 
 <hr />
 
 <a id="360"></a>
-@Html.React("GalagaViewer", new { data = Model.GetCharacter(Model.SelectedCharacter) })
+@Html.React("GalagaViewer", new { data = Model.GetCharacterData(Model.SelectedCharacter) })
 
 
 @if (Model.IsMainCharacter)
 {
     <hr />
     <h3>3D Prototypes</h3>
-    @Html.React("GalagaPrototypes", new { data = Model.GetCharacter(Model.SelectedCharacter) })
+    @Html.React("GalagaPrototypes", new { data = Model.GetCharacterData(Model.SelectedCharacter) })
     <hr />
     <h2>Flat Landers</h2>
-    @Html.React("GalagaFlatlanders", new { data = Model.GetCharacter(Model.SelectedCharacter) })
+    @Html.React("GalagaFlatlanders", new { data = Model.GetCharacterData(Model.SelectedCharacter) })
 }
 <br />
 @Html.React("GalagaNavigation", new { data = Model.GetCharacterData(), footer = true })

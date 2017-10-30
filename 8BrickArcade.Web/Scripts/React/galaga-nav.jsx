@@ -1,10 +1,11 @@
 ﻿var GalagaNavigation = React.createClass({
-    render: function () {
+	render: function () {
+		var click = this.props.onClick;
         var svg = (this.props.svg != undefined && this.props.svg);
         var lego = (this.props.lego === undefined || this.props.lego);
         var characterNodes = this.props.data.map(function (c) {
             return (
-                <GalagaNavigationNode key={c.Id} data={c} svg={svg} lego={lego}>
+				<GalagaNavigationNode key={c.Id} data={c} svg={svg} lego={lego} onClick={click}>
                 </GalagaNavigationNode>
             );
         });
@@ -19,7 +20,7 @@
                     </div>
                 </div>
                 {this.props.footer &&
-                    <h4><a className="highlight" href="/galaga">&laquo; Back to Galaga</a></h4>
+                    <h4><a className="highlight" href="/galaga/">&laquo; Back to Galaga</a></h4>
                 }
             </div>
         );            
@@ -28,9 +29,10 @@
 
 var GalagaNavigationNode = React.createClass({
     render: function () {
-        var name = this.props.data.Name.toLowerCase();
-        return (
-            <a href={"/galaga/characters/" + name}>
+		var name = this.props.data.Name.toLowerCase();
+		var click = this.props.onClick;
+		return (
+			<a href={"/galaga/characters/#" + name} onClick={() => click(name)}>
                 {this.props.lego &&
                     <img src={"/images/galaga/states/" + name + "-open.png"} />
                 }
