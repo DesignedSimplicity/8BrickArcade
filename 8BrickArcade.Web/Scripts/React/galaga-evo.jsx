@@ -2,7 +2,7 @@
     render: function () {
         var rows = this.props.data.map(function (c) {
             return (
-                <a key={c.Id} href={"/galaga/character/#" + c.Name.toLowerCase()}>
+                <a key={c.Id} href={"/galaga/characters/#" + c.Name.toLowerCase()}>
                     <GalagaEvolutionRow data={c}>
                     </GalagaEvolutionRow>
                 </a>

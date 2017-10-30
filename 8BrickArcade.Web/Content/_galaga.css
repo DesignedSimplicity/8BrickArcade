@@ -125,6 +125,24 @@
         margin: 20px 3%;
     }
 
+/* GALAGA CHARACTERS */
+.galaga-list {
+    color: #ddd;
+}
+
+    .galaga-list:hover {
+        color: #a90000;
+        text-decoration: none;
+    }
+
+.galaga-list-row {
+	background: #000;
+	vertical-align: middle;
+}
+
+.galaga-list-img-angle {
+	padding-top: 15%;
+}
 
 
 
@@ -171,26 +189,7 @@
 
 
 
-/* GALAGA CHARACTERS */
-/*
-.galaga-main-char {
-    color: #ddd;
-}
 
-    .galaga-main-char:hover {
-        color: #a90000;
-        text-decoration: none;
-    }
-
-.galaga-main-char-row {
-    background: #000;
-    vertical-align: middle;
-}
-
-.galaga-main-char-img-angle {
-    padding-top: 15%;
-}
-*/
 
 /* GALAGA CUBES */
 /*

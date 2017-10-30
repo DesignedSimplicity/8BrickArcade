@@ -417,10 +417,11 @@
     <Content Include="Scripts\React\galaga-evo.jsx" />
     <Content Include="Scripts\React\galaga-360.jsx" />
     <Content Include="Scripts\React\galaga-nav.jsx" />
+    <Content Include="Scripts\React\galaga-row.jsx" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -443,7 +444,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="site.webmanifest" />
-    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\Galego.cshtml" />

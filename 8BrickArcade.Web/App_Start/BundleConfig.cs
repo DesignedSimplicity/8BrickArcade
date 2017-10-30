@@ -23,7 +23,9 @@ namespace _8BrickArcade
                         "~/Scripts/React/galaga-nav.jsx",
                         "~/Scripts/React/galaga-evo.jsx",
                         "~/Scripts/React/galaga-360.jsx",
-                        "~/Scripts/React/galaga-img.jsx"));
+						"~/Scripts/React/galaga-img.jsx",
+						"~/Scripts/React/galaga-row.jsx"
+						));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/bootstrap.css",

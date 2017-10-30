@@ -11,21 +11,7 @@
 <h1>Characters</h1>
 <hr />
 <div>
-    @foreach (var c in Model.AllCharacters)
-    {
-        <a class="galaga-main-char" href="@GalagaViewModel.GetCharacterUrl(c)">
-            <h2>@GalagaViewModel.GetCharacterName(c) &raquo;</h2>
-            <div class="row galaga-main-char-row">
-                <div class="col-xs-6">
-                    <img class="img-responsive" src="@GalagaViewModel.GetStateImageUrl(c)" />
-                </div>
-                <div class="col-xs-6">
-                    <img class="img-responsive galaga-main-char-img-angle" src="@GalagaViewModel.GetAngleImageUrl(c)" />
-                </div>
-            </div>
-        </a>
-        <hr />
-    }
+@Html.React("GalagaCharacterList", new { data = Model.Characters.Where(x => x.HasEvolution) })
 </div>
 <br />
 

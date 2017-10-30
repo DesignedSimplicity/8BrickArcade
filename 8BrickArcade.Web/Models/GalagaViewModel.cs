@@ -211,7 +211,7 @@ namespace _8BrickArcade.Web.Models
 
         public static string GetAngleImageUrl(GalagaCharacter character)
         {
-            return $"/images/galaga/states//{character}-angle.png".ToLowerInvariant();
+            return $"/images/galaga/states/{character}-angle.png".ToLowerInvariant();
         }
 
         public static string GetLegoImageUrl(GalagaCharacter character)
