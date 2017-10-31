@@ -8,30 +8,4 @@
 <div>
     <a class="galego-logo" href="/galaga"><img src="~/images/logos/galego.png" /></a>
 </div>
-<hr />
-<h1><a class="highlight" href="/galaga/characters/">&raquo;&nbsp;Characters&nbsp;&laquo;</a></h1>
-<hr />
-@Html.React("GalagaNavigation", new { data = Model.GetCharacterData() })
-
-<hr />
-<h2>@Model.SelectedCharacterName</h2>
-
-@Html.React("GalagaStates", new { data = Model.GetCharacterData(Model.SelectedCharacter) })
-
-<hr />
-
-<a id="360"></a>
-@Html.React("GalagaViewer", new { data = Model.GetCharacterData(Model.SelectedCharacter) })
-
-
-@if (Model.IsMainCharacter)
-{
-    <hr />
-    <h3>3D Prototypes</h3>
-    @Html.React("GalagaPrototypes", new { data = Model.GetCharacterData(Model.SelectedCharacter) })
-    <hr />
-    <h2>Flat Landers</h2>
-    @Html.React("GalagaFlatlanders", new { data = Model.GetCharacterData(Model.SelectedCharacter) })
-}
-<br />
-@Html.React("GalagaNavigation", new { data = Model.GetCharacterData(), footer = true })
+@Html.React("GalagaCharacterPage", new { data = Model.GetCharacterData(), selected = Model.SelectedCharacterName.ToLowerInvariant() })

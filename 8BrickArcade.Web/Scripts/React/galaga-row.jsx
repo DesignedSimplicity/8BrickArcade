@@ -1,25 +1,32 @@
 ﻿var GalagaCharacterPage = React.createClass({
 	getInitialState() {
-		var selected = "";
-
-		// load currently selected from hash
-		/*
-		if (typeof (window) != 'undefined' && window.location.hash) {
-			name = window.location.hash.substring(1);
-			var c = this.getCharacter(name);
-			selected = (c == null ? "" : name);
-		}*/
-
+		// preload selected character
 		return {
-			selected: selected
+			selected: (this.props.selected ? this.props.selected : "")
 		};
 	},
-	onClick: function (name) {
+	onClick: function (event, name) {
+		// prevent follow href
+		event.preventDefault();
+
+		// make sure window exists (client side)
+		if (typeof (window) != 'undefined') {
+			// move to top of page
+			window.scrollTo(0, 0);
+
+			// update history if supported
+			if (typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function') {
+				window.history.pushState(null, "Galaga \ " + name, "/galaga/characters/" + name);
+			}
+		}
+
+		// update state and refresh
 		this.setState({
 			selected: name
 		});
 	},
 	getCharacter: function (name) {
+		// look up character data from name
 		var char = null;
 		if (name && name.length > 1) {
 			var rows = this.props.data.map(function (c) {
@@ -30,12 +37,8 @@
 		}
 		return char;
 	},
-	componentDidMount: function() {
-		if (typeof (window) != 'undefined') {
-			window.scrollTo(0, 0);
-		}
-	},
 	render: function () {
+		// render list of characters if none selected
 		if (this.state.selected == "") {
 			return (
 				<div>
@@ -50,6 +53,7 @@
 				</div>
 			);
 		} else {
+			// render page for a specific character if selected
 			var char = this.getCharacter(this.state.selected);
 			return (
 				<div>
@@ -90,7 +94,7 @@ var GalagaCharacterList = React.createClass({
 		var rows = this.props.data.map(function (c) {
 			return (
 				<div key={c.Id}>
-					<a className="galaga-list" href={"/galaga/characters/#" + c.Name.toLowerCase()} onClick={() => click(c.Name.toLowerCase())}>
+					<a className="galaga-list" href={"/galaga/characters/#" + c.Name.toLowerCase()} onClick={(e) => click(e, c.Name.toLowerCase())}>
 						<h2>{c.Name} &raquo;</h2>
 						<GalagaCharacterRow name={c.Name}>
 						</GalagaCharacterRow>
