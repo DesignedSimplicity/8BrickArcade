@@ -7,7 +7,6 @@ namespace _8BrickArcade.Web.Models
 {
     public enum GalagaCharacter
     {
-        None = 0,
         Fighter = 1,
         Galaga = 2,
         Butterfly = 3,
@@ -16,8 +15,8 @@ namespace _8BrickArcade.Web.Models
         Dragonfly = 6,
         Scorpion = 7,
         Galaxian = 8,
-        Satellite = 9,
-        Enterprise = 10,
+        //Satellite = 9,
+        //Enterprise = 10,
     }
 
     public class GalagaModel
@@ -41,7 +40,7 @@ namespace _8BrickArcade.Web.Models
             _japanese.Add(GalagaCharacter.Bosconian, "Midori");
             _japanese.Add(GalagaCharacter.Dragonfly, "Tonbo");
             _japanese.Add(GalagaCharacter.Scorpion, "Sasori");
-            _japanese.Add(GalagaCharacter.Satellite, "Momiji");
+           // _japanese.Add(GalagaCharacter.Satellite, "Momiji");
 
             _description = new Dictionary<GalagaCharacter, string>();
         }
