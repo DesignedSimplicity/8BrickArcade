@@ -18,6 +18,9 @@
 			if (typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function') {
 				window.history.pushState(null, "Galaga \ " + name, "/galaga/characters/" + name);
 			}
+
+			// fade main page out
+			document.getElementById("galaga").classList.add("fade-out");
 		}
 
 		// update state and refresh
@@ -37,6 +40,14 @@
 		}
 		return char;
 	},
+	/*
+	componentDidUpdate: function () {
+		if (typeof document !== 'undefined') {
+			document.getElementById("galaga").classList.add("fade-in");
+			document.getElementById("galaga").classList.remove("fade-out");
+		}
+	},
+	*/
 	render: function () {
 		// render list of characters if none selected
 		if (this.state.selected == "") {

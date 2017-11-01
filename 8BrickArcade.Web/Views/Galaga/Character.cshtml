@@ -8,4 +8,6 @@
 <div>
     <a class="galego-logo" href="/galaga"><img src="~/images/logos/galego.png" /></a>
 </div>
-@Html.React("GalagaCharacterPage", new { data = Model.Characters, selected = Model.SelectedCharacterName.ToLowerInvariant() })
+<div id="galaga">
+	@Html.React("GalagaCharacterPage", new { data = Model.Characters, selected = Model.SelectedCharacterName.ToLowerInvariant() })
+</div>
