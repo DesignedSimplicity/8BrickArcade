@@ -12,15 +12,15 @@
 		// make sure window exists (client side)
 		if (typeof (window) != 'undefined') {
 			// move to top of page
-			window.scrollTo(0, 0);
+			//window.scrollTo(0, 0);
 
 			// update history if supported
-			if (typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function') {
-				window.history.pushState(null, "Galaga \ " + name, "/galaga/characters/" + name);
-			}
+            if (typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function') {
+                window.history.pushState(null, "Galaga \ " + name, "/galaga/characters/" + name + "#nav");
+            }
 
 			// fade main page out
-			document.getElementById("galaga").classList.add("fade-out");
+			//document.getElementById("galaga").classList.add("fade-out");
 		}
 
 		// update state and refresh
@@ -40,14 +40,11 @@
 		}
 		return char;
 	},
-	/*
 	componentDidUpdate: function () {
 		if (typeof document !== 'undefined') {
-			document.getElementById("galaga").classList.add("fade-in");
-			document.getElementById("galaga").classList.remove("fade-out");
+            document.getElementById("nav").scrollIntoView(); // scroll to nav
 		}
 	},
-	*/
 	render: function () {
 		// render list of characters if none selected
 		if (this.state.selected == "") {
@@ -68,17 +65,17 @@
 			var char = this.getCharacter(this.state.selected);
 			return (
 				<div>
-					<hr />
+                    <hr />
+                    <a id="nav"></a>
 					<h1>
 						<a className="highlight" href="/galaga/characters/">&raquo;&nbsp;Characters&nbsp;&laquo;</a>
 					</h1>
-					<hr />
+                    <hr />
 					<GalagaNavigation data={this.props.data} onClick={this.onClick} />
 					<hr />
 					<h2>{char.Name}</h2>
 					<GalagaStates data={char} />
 					<hr />
-					<a id="360"></a>
 					<GalagaViewer data={char} />
 					{char.HasEvolution &&
 						<div>

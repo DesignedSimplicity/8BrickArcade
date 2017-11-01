@@ -228,6 +228,14 @@
     <Content Include="images\galaga\angles\thumb\scorpion-225.jpg" />
     <Content Include="images\galaga\angles\thumb\scorpion-270.jpg" />
     <Content Include="images\galaga\angles\thumb\scorpion-315.jpg" />
+    <Content Include="images\galaga\icons\lego\bosconian.png" />
+    <Content Include="images\galaga\icons\lego\bumblebee.png" />
+    <Content Include="images\galaga\icons\lego\butterfly.png" />
+    <Content Include="images\galaga\icons\lego\dragonfly.png" />
+    <Content Include="images\galaga\icons\lego\fighter.png" />
+    <Content Include="images\galaga\icons\lego\galaga.png" />
+    <Content Include="images\galaga\icons\lego\galaxian.png" />
+    <Content Include="images\galaga\icons\lego\scorpion.png" />
     <Content Include="images\galaga\states\bosconian-angle.png" />
     <Content Include="images\galaga\states\bosconian-open.png" />
     <Content Include="images\galaga\states\bumblebee-angle.png" />

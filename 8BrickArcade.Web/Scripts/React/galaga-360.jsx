@@ -54,7 +54,7 @@
 var GalagaViewerAngle = React.createClass({
     render: function () {
 		return (
-            <a href="#360" onClick={() => this.props.onChange(this.props.angle)} onMouseOver={() => this.props.onChange(this.props.angle)}>
+            <a onClick={() => this.props.onChange(this.props.angle)} onMouseOver={() => this.props.onChange(this.props.angle)}>
                 <GalagaViewerAngleImage name={this.props.name} angle={this.props.angle} />
             </a>
         );
