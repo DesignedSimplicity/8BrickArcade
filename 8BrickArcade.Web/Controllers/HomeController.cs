@@ -12,7 +12,7 @@ namespace _8BrickArcade.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View(new BaseViewModel());
+            return View("Home");
         }
 
         public ActionResult Page(string page)

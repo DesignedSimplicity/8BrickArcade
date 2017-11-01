@@ -19,7 +19,6 @@ namespace _8BrickArcade
                         "~/Scripts/bootstrap.js"));
 
             bundles.Add(new BabelBundle("~/bundles/react").Include(
-                        "~/Scripts/React/components.jsx",
                         "~/Scripts/React/galaga-nav.jsx",
                         "~/Scripts/React/galaga-evo.jsx",
                         "~/Scripts/React/galaga-360.jsx",

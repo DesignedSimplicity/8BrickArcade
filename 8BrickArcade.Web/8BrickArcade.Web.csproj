@@ -420,7 +420,6 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\React\components.jsx" />
     <Content Include="Scripts\React\galaga-img.jsx" />
     <Content Include="Scripts\React\galaga-evo.jsx" />
     <Content Include="Scripts\React\galaga-360.jsx" />
@@ -429,19 +428,16 @@
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\GalagaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\GalagaModel.cs" />
     <Compile Include="Models\GalagaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
