@@ -23,6 +23,12 @@
         background: #222;
     }
 
+.evolution-text {
+    width: 100%;
+    padding: 0 5%;
+    text-align: center;
+}
+
 .evolution-cell {
     width: 100%;
     padding: 5%;
@@ -143,149 +149,3 @@
 .galaga-list-img-angle {
 	padding-top: 15%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/* GALAGA NAV */
-/*
-.galaga-nav3 {
-    vertical-align: middle;
-    background: #000;
-    font-size: 0;
-}
-
-    .galaga-nav3 > h1 {
-        text-align: left;
-        display: inline-block;
-        vertical-align: middle;
-        width: 40%;
-    }
-
-    .galaga-nav3 > a {
-        opacity: 0.8;
-        text-decoration: none;
-        display: inline-block;
-        margin: 1%;
-        width: 5.5%;
-    }
-
-        .galaga-nav3 > a:hover {
-            opacity: 1;
-        }
-
-        .galaga-nav3 > a > img {
-            width: 100%;
-        }
-*/
-
-
-
-
-
-/* GALAGA CUBES */
-/*
-.galaga-cubes {
-    background: #000;
-}
-
-    .galaga-cubes img {
-        width: 100%;
-        height: auto;
-    }
-    */
-
-/* GALAGA QUADS */
-/*
-.galaga-quad {
-    background: #000;
-    font-size: 0px;
-}
-
-    .galaga-quad > a > img {
-        cursor: pointer;
-        display: inline-block;
-        width: 12%;
-        height: auto;
-        margin: 1% 0.25%;
-        border: #d1d1d1 1px solid;
-    }
-
-    .galaga-quad > div {
-        overflow: hidden;
-    }
-
-        .galaga-quad > div > img {
-            margin-top: -10%;
-            width: 100%;
-            height: auto;
-        }
-    */
-
-
-
-/* GALAGA COMPS */
-/*
-.galaga-comps {
-    background: #000;
-}
-
-    .galaga-comps img {
-        width: 45%;
-        padding: 2.5%;
-        height: auto;
-    }
-
-.galaga-comps1 {
-    background: #000;
-}
-
-    .galaga-comps1 img {
-        width: 100%;
-        height: auto;
-        margin: 10px auto;
-    }
-
-.galaga-comps2 {
-    background: #000;
-    font-size: 0px;
-}
-
-    .galaga-comps2 img {
-        display: inline-block;
-        width: 22%;
-        height: auto;
-        margin: 1%;
-    }
-
-.galaga-comps3 {
-    background: #000;
-}
-
-    .galaga-comps3 img {
-        width: 25%;
-        height: auto;
-        margin: 20px 3%;
-    }
-
-.galaga-comps4 {
-    background: #000;
-    font-size: 0px;
-}
-
-    .galaga-comps4 img {
-        display: inline-block;
-        width: 12%;
-        height: auto;
-        margin: 1% 0.25%;
-        border: #d1d1d1 1px solid;
-    }
-    */

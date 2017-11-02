@@ -12,12 +12,12 @@ namespace _8BrickArcade.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View("Home");
+            return View();
         }
 
         public ActionResult Page(string page)
         {
-            if (String.IsNullOrWhiteSpace(page)) return View("Home");
+            if (String.IsNullOrWhiteSpace(page)) return View("Index");
             return View(page);
         }
     }

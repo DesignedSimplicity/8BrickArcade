@@ -2,7 +2,7 @@
 @model GalagaViewModel
 
 @{
-    ViewBag.Title = "Evolution -> Into the 4th dimension";
+    ViewBag.Title = "Evolution - Into the 4th dimension";
     ViewBag.Description = "Iterative design has evolved these simple pixelated sprites into imaginative 4th dimensional projections.";
 }
 
@@ -11,10 +11,33 @@
 </div>
 <hr />
 <h1 class="highlight">Evolution</h1>
-<hr />
 <h2>Into the 4th dimension</h2>
-<div>
-    Iterative design has evolved these simple pixelated sprites into imaginative 4th dimensional projections.
+<hr />
+<h4>
+    Iterative design has evolved these simple pixelated sprites into imaginative 4th dimensional projections.<br />
+</h4>
+<br />
+<div class="row">
+    <div class="col-md-3">
+        <p class="evolution-text">
+            The first generation were simple arrangements of LEGO tiles on baseplates.
+        </p>
+    </div>
+    <div class="col-md-3">
+        <p class="evolution-text">
+            Extruding depth from them created pseudo-3D models called Flat Landers.
+        </p>
+    </div>
+    <div class="col-md-3">
+        <p class="evolution-text">
+            Escaping the constraint of the baseplate allowed for a more complex design.
+        </p>
+    </div>
+    <div class="col-md-3">
+        <p class="evolution-text">
+            Introducing hinges allows for movement between the two animation states.
+        </p>
+    </div>
 </div>
 
 @Html.React("GalagaEvolutionGrid", new { data = Model.Characters.Where(x => x.HasEvolution) })
