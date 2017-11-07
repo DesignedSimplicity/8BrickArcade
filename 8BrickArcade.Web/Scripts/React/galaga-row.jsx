@@ -1,9 +1,28 @@
 ﻿var GalagaCharacterPage = React.createClass({
 	getInitialState() {
 		// preload selected character
+		var initial = (this.props.selected ? this.props.selected : "");
 		return {
-			selected: (this.props.selected ? this.props.selected : "")
+			selected: initial,
+			initial: initial
 		};
+	},
+	componentDidMount: function () {
+		if (typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function') {
+			window.addEventListener('popstate', this.navigatePage);
+		}
+	},
+	navigatePage: function (event) {
+		var name = "";
+		if (event.state != null)
+			name = event.state.name;
+		else
+			name = this.state.initial;
+
+		// update state and refresh
+		this.setState({
+			selected: name
+		});
 	},
 	onClick: function (event, name) {
 		// prevent follow href
@@ -11,16 +30,10 @@
 
 		// make sure window exists (client side)
 		if (typeof (window) != 'undefined') {
-			// move to top of page
-			//window.scrollTo(0, 0);
-
 			// update history if supported
             if (typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function') {
-                window.history.pushState(null, "Galaga \ " + name, "/galaga/characters/" + name + "#nav");
+				window.history.pushState({ name: name }, "Galaga - " + name, "/galaga/characters/" + name + "#nav");
             }
-
-			// fade main page out
-			//document.getElementById("galaga").classList.add("fade-out");
 		}
 
 		// update state and refresh
@@ -41,7 +54,7 @@
 		return char;
 	},
 	componentDidUpdate: function () {
-		if (typeof document !== 'undefined') {
+		if (typeof document !== 'undefined' && typeof document === 'function') {
             document.getElementById("nav").scrollIntoView(); // scroll to nav
 		}
 	},
