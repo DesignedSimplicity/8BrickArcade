@@ -2,12 +2,40 @@
 @model GalagaViewModel
 
 @{
-    ViewBag.Title = $"Galaga - {Model.SelectedCharacterName}";
+	ViewBag.Title = $"Galaga - {Model.SelectedCharacterName}";
 }
 
 <div>
-    <a class="galego-logo" href="/galaga"><img src="~/images/logos/galego.png" /></a>
+	<a class="galego-logo" href="/galaga"><img src="~/images/logos/galego.png" /></a>
 </div>
 <div id="galaga">
 	@Html.React("GalagaCharacterPage", new { data = Model.Characters, selected = Model.SelectedCharacterName.ToLowerInvariant() })
 </div>
+@if (Model.HasSelectedCharacter)
+{
+	<script>
+        function cache360() {
+			if (document.images) {
+				for (var angle = 0; angle < 360; angle += 45) {
+					var preImg = new Image();
+					var degrees = ("000" + angle);
+					preImg.src = "/images/galaga/angles/@(Model.SelectedCharacterName.ToLowerInvariant())-" + degrees.substr(degrees.length - 3) + ".jpg";
+				}
+			}
+		}
+		function addLoadEvent(loader) {
+			var oldLoad = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = loader;
+			} else {
+				window.onload = function() {
+					if (oldLoad) {
+						oldLoad();
+					}
+					loader();
+				}
+			}
+		}
+		addLoadEvent(cache360);
+	</script>
+}

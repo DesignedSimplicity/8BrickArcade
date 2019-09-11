@@ -13,7 +13,6 @@
         });
 	},
     dragStart: function (e) {
-        console.log("dragStart");
 		this.setState({
             start: e.touches[0].pageX,
             width: e.target.width,
@@ -27,7 +26,6 @@
         if (a < 0) a += 360;
         if (a >= 360) a -= 360;
         if (a == -0 || a == 360) a = 0;
-        console.log("dragView", a);
 		this.setState({
 			angle: a
         });
