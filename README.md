@@ -1,6 +1,6 @@
 # [8BrickArcade.com](https://www.8BrickArcade.com)
 
-###A simple React front-end integrated with an ASP.NET MVC4 back-end
+### A simple React front-end integrated with an ASP.NET MVC4 back-end
 
 ## Features
 
@@ -19,10 +19,10 @@ Bootstrap is leveraged to provide a well-known responsive layout framework and a
 
 All design, artwork and images were created to showcase a LEGO project and experiment with studio photography and post processing techniques.
 
-## LegoBYTE
+## What is a LegoByte?
 
-*What is a LegoBYTE?*  **A LEGObyte is a single LEGO brick being used as a pixel.**
+### A LegoByte is a single LEGO brick being used as a pixel
 
-![LegoBYTE](https://github.com/DesignedSimplicity/8BrickArcade/raw/master/8BrickArcade.Web/images/story/fighter.gif "GaLEGO in LegoBYTEs")
+![LegoByte](https://github.com/DesignedSimplicity/8BrickArcade/raw/master/8BrickArcade.Web/images/story/fighter.gif "GaLEGO in LegoBYTEs")
 
 > EVERYTHING is AWESOME
