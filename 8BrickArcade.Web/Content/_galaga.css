@@ -149,3 +149,16 @@
 .galaga-list-img-angle {
 	padding-top: 15%;
 }
+
+/* GALAGA ANIMATIONS */
+.galaga-out {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+.galaga-in {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 0.25s linear;
+}

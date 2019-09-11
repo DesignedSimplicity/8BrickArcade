@@ -1,10 +1,12 @@
 ﻿var GalagaCharacterPage = React.createClass({
 	getInitialState() {
 		// preload selected character
-		var initial = (this.props.selected ? this.props.selected : "");
+		var initial = this.props.selected ? this.props.selected : "";
 		return {
+			previous: null,
 			selected: initial,
-			initial: initial
+			initial: initial,
+			changing: false
 		};
 	},
 	componentDidMount: function () {
@@ -12,9 +14,24 @@
 			window.addEventListener('popstate', this.navigatePage);
 		}
 	},
+	componentWillUnmount() {
+		if (this.transitionTime) {
+			clearTimeout(this.transitionTime);
+		}
+	},
+	componentDidUpdate: function () {
+		if (this.state.changing) {
+			this.transitionTime = setTimeout(() => {
+				this.setState(() => ({ changing: false }))
+			}, 400);
+		}
+		if (typeof document !== 'undefined' && typeof document === 'function') {
+			document.getElementById("nav").scrollIntoView(); // scroll to nav
+		}
+	},
 	navigatePage: function (event) {
 		var name = "";
-		if (event.state != null)
+		if (event.state)
 			name = event.state.name;
 		else
 			name = this.state.initial;
@@ -29,38 +46,48 @@
 		event.preventDefault();
 
 		// make sure window exists (client side)
-		if (typeof (window) != 'undefined') {
+		if (typeof window !== 'undefined') {
 			// update history if supported
-            if (typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function') {
+			if (typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function') {
 				window.history.pushState({ name: name }, "Galaga - " + name, "/galaga/characters/" + name + "#nav");
-            }
+			}
 		}
 
-		// update state and refresh
-		this.setState({
-			selected: name
-		});
+		// check if we are updating page
+		if (this.state.selected === "") {
+			// update state and refresh
+			this.setState({
+				previous: "",
+				selected: name,
+				changing: false
+			});
+		}
+		else if (this.state.selected !== name) {
+			var previous = this.state.selected;
+
+			// update state and refresh
+			this.setState({
+				previous: previous,
+				selected: name,
+				changing: true
+			});
+		}
 	},
 	getCharacter: function (name) {
 		// look up character data from name
 		var char = null;
 		if (name && name.length > 1) {
 			var rows = this.props.data.map(function (c) {
-				if (c.Name.toLowerCase() == name.toLowerCase()) {
+				if (c.Name.toLowerCase() === name.toLowerCase()) {
 					char = c;
 				}
 			});
 		}
 		return char;
 	},
-	componentDidUpdate: function () {
-		if (typeof document !== 'undefined' && typeof document === 'function') {
-            document.getElementById("nav").scrollIntoView(); // scroll to nav
-		}
-	},
 	render: function () {
 		// render list of characters if none selected
-		if (this.state.selected == "") {
+		if (this.state.selected === "") {
 			return (
 				<div>
 					<hr />
@@ -75,31 +102,34 @@
 			);
 		} else {
 			// render page for a specific character if selected
-			var char = this.getCharacter(this.state.selected);
+			var char = this.getCharacter(this.state.changing ? this.state.previous : this.state.selected);
+			if (!char) char = this.state.selected;
 			return (
 				<div>
-                    <hr />
-                    <a id="nav"></a>
+					<hr />
+					<a id="nav" />
 					<h1>
 						<a className="highlight" href="/galaga/characters/">&raquo;&nbsp;Characters&nbsp;&laquo;</a>
 					</h1>
-                    <hr />
+					<hr />
 					<GalagaNavigation data={this.props.data} onClick={this.onClick} />
 					<hr />
-					<h2>{char.Name}</h2>
-					<GalagaStates data={char} />
-					<hr />
-					<GalagaViewer data={char} />
-					{char.HasEvolution &&
-						<div>
-							<hr />
-							<h2>3D Prototypes</h2>
-							<GalagaPrototypes data={char} />
-							<hr />
-							<h2>Flat Landers</h2>
-							<GalagaFlatlanders data={char} />
-						</div>
-					}
+					<div className={this.state.changing ? "galaga-out" : "galaga-in"}>
+						<h2>{char.Name}</h2>
+						<GalagaStates data={char} />
+						<hr />
+						<GalagaViewer data={char} />
+						{char.HasEvolution &&
+							<div>
+								<hr />
+								<h2>3D Prototypes</h2>
+								<GalagaPrototypes data={char} />
+								<hr />
+								<h2>Flat Landers</h2>
+								<GalagaFlatlanders data={char} />
+							</div>
+						}
+					</div>
 					<hr />
 					<br />
 					<GalagaNavigation data={this.props.data} onClick={this.onClick} footer="true" />
