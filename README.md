@@ -4,8 +4,6 @@
 
 **A simple React front-end integrated with an ASP.NET MVC4 back-end.**
 
-![LegoBYTE](https://github.com/DesignedSimplicity/8BrickArcade/raw/master/8BrickArcade.Web/images/story/fighter.gif "GaLEGO in LegoBYTEs")
-
 ## Features
 
 1. Server-side rendering of React Components to ensure rendering on devices without JavasScript enabled
@@ -22,3 +20,18 @@ React Components are built in ES6 compliant JavaScript as JSX files and bundled 
 Bootstrap is leveraged to provide a well-known responsive layout framework and augmented with custom CSS where required.  All artwork and images 
 
 All design, artwork and images were created to showcase a LEGO project and experiment with studio photography and post processing techniques.
+
+## LegoBYTE
+
+*What is a LegoBYTE?*
+
+**A LEGObyte is a single LEGO brick being used as a pixel.**
+
+![LegoBYTE](https://github.com/DesignedSimplicity/8BrickArcade/raw/master/8BrickArcade.Web/images/story/fighter.gif "GaLEGO in LegoBYTEs")
+
+|:-------------:|
+| EVERYTHING is AWESOME |
+| and |
+| SPACESHIPS |
+| and |
+| CARS |
