@@ -171,7 +171,7 @@ var GalagaCharacterRow = React.createClass({
 					<img className="img-responsive" src={"/images/galaga/states/" + name + "-open.png"} />
 				</div>
 				<div className="col-xs-6">
-					<img className="img-responsive galaga-main-char-img-angle" src={"/images/galaga/states/" + name + "-angle.png"} />
+					<img className="img-responsive galaga-list-img-angle" src={"/images/galaga/states/" + name + "-angle.png"} />
 				</div>
 			</div>
 		);
