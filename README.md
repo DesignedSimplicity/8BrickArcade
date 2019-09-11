@@ -1,8 +1,6 @@
-# 8BrickArcade
+# [8BrickArcade.com](https://www.8BrickArcade.com)
 
-### [8BrickArcade.com](https://www.8BrickArcade.com)
-
-**A simple React front-end integrated with an ASP.NET MVC4 back-end.**
+###A simple React front-end integrated with an ASP.NET MVC4 back-end
 
 ## Features
 
@@ -23,15 +21,8 @@ All design, artwork and images were created to showcase a LEGO project and exper
 
 ## LegoBYTE
 
-*What is a LegoBYTE?*
-
-**A LEGObyte is a single LEGO brick being used as a pixel.**
+*What is a LegoBYTE?*  **A LEGObyte is a single LEGO brick being used as a pixel.**
 
 ![LegoBYTE](https://github.com/DesignedSimplicity/8BrickArcade/raw/master/8BrickArcade.Web/images/story/fighter.gif "GaLEGO in LegoBYTEs")
 
-|:-------------:|
-| EVERYTHING is AWESOME |
-| and |
-| SPACESHIPS |
-| and |
-| CARS |
+> EVERYTHING is AWESOME
