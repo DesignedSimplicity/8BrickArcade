@@ -1,4 +1,4 @@
-# [8BrickArcade.com](https://www.8BrickArcade.com)
+# [8BrickArcade](https://galego.designed.com)
 
 ### A simple React front-end integrated with an ASP.NET MVC4 back-end
 
