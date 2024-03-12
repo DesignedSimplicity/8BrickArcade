@@ -31,8 +31,8 @@ var GalagaNavigationNode = React.createClass({
     render: function () {
 		var name = this.props.data.Name.toLowerCase();
 		var click = this.props.onClick ? this.props.onClick : function () { };
-		return (
-			<a href={"/galaga/characters/" + name + "#nav"} onClick={(e) => click(e, name)}>
+        return (
+            <a href={"/galaga/characters/" + name + "/#nav"} onClick={(e) => click(e, name)}>
                 {this.props.lego &&
                     <img src={"/images/galaga/icons/lego/" + name + ".png"} />
                 }

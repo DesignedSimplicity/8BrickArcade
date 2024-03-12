@@ -49,7 +49,7 @@
 		if (typeof window !== 'undefined') {
 			// update history if supported
 			if (typeof window.history !== 'undefined' && typeof window.history.replaceState === 'function') {
-				window.history.pushState({ name: name }, "Galaga - " + name, "/galaga/characters/" + name + "#nav");
+				window.history.pushState({ name: name }, "Galaga - " + name, "/galaga/characters/" + name.toLowerCase() + "/#nav");
 			}
 		}
 

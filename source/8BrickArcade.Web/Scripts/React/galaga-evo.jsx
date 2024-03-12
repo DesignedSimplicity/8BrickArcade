@@ -39,7 +39,7 @@ var GalagaEvolutionCell = React.createClass({
         return (
             <div className="col-xs-3">
                 <div className="evolution-cell">
-                    <img src={this.props.Image} />
+                    <img src={this.props.Image.toLowerCase()} />
                 </div>
             </div>
         );

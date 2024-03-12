@@ -1,6 +1,6 @@
 ﻿var GalagaStates = React.createClass({
     render: function () {
-        var name = this.props.data.Name;
+        var name = this.props.data.Name.toLowerCase();
         var states = this.props.data.HasStates;
         return (
             <div className="galaga-states">
@@ -34,7 +34,7 @@
 
 var GalagaPrototypes = React.createClass({
     render: function () {
-        var name = this.props.data.Name;
+        var name = this.props.data.Name.toLowerCase();
         var src = "/images/galaga/prototype/" + name + "/";
 
         return (
@@ -52,7 +52,7 @@ var GalagaPrototypes = React.createClass({
 
 var GalagaFlatlanders = React.createClass({
     render: function () {
-        var name = this.props.data.Name;
+        var name = this.props.data.Name.toLowerCase();
         var src = "/images/galaga/flatlander/" + name + "-";
 
         return (

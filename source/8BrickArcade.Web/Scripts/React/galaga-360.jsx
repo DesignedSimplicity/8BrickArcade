@@ -70,7 +70,7 @@ var GalagaViewerAngleImage = React.createClass({
         image += this.props.name + "-" + degrees + ".jpg";
 
         return (
-            <img draggable={main} src={image} />
+            <img draggable={main} src={image.toLowerCase()} />
         );
     }
 });
